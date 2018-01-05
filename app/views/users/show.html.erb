@@ -1,0 +1,62 @@
+<body>
+  <%= render partial: 'shared/header' %>
+  <div class="user-show-name">
+    <p><%= @user.nickname %>さんへの過去のコメント</p>
+  </div>
+
+  <div class="past-comment">
+    <% @user.messages.each do |message| %>
+    <div class="past-comment-individual">
+      <div class="past-comment-individual1">
+        <div class="past-comment1">
+          <span class="past-comment-number">
+            1
+          </span>
+          <span class="past-comment-text">
+            こういうところが優しいよ
+          </span>
+        </div>
+        <div class="past-comment2">
+          <div class="past-comment2-content">
+            <%= message.body1 %>
+          </div>
+        </div>
+        <div class="past-comment1">
+          <span class="past-comment-number">
+            2
+          </span>
+          <span class="past-comment-text">
+            こういうところがすごいよ
+          </span>
+        </div>
+        <div class="past-comment2">
+          <div class="past-comment2-content">
+            <%= message.body2 %>
+          </div>
+        </div>
+        <div class="past-comment1">
+          <span class="past-comment-number">
+            3
+          </span>
+          <span class="past-comment-text">
+            普段言えないありがとうを
+          </span>
+        </div>
+        <div class="past-comment2">
+          <div class="past-comment2-content">
+            <%= message.body3 %>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="users-show-button">
+      <%= link_to "あなたもコメントを届ける", new_user_message_path(message.user_id) %>
+    </div>
+    <% end %>
+  </div>
+
+
+
+
+</body>

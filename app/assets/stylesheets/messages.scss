@@ -1,0 +1,236 @@
+// Place all the styles related to the messages controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+@import url(https://fonts.googleapis.com/css?family=Lato:400,700);
+@import url(http://fonts.googleapis.com/earlyaccess/notosansjp.css);
+
+body {
+  background-color: #FFCC99;
+}
+
+.title {
+  position: absolute;
+  left: 550px;
+  font-family: Lato, "Noto Sans JP", "游ゴシック Medium", "游ゴシック体", "Yu Gothic Medium", YuGothic, "ヒラギノ角ゴ ProN", "Hiragino Kaku Gothic ProN", "メイリオ", Meiryo, "ＭＳ Ｐゴシック", "MS PGothic", sans-serif;
+  font-size: 60px;
+  font-style: italic;
+}
+
+.user-title {
+  position: absolute;
+  left: 460px;
+  font-family: Lato, "Noto Sans JP", "游ゴシック Medium", "游ゴシック体", "Yu Gothic Medium", YuGothic, "ヒラギノ角ゴ ProN", "Hiragino Kaku Gothic ProN", "メイリオ", Meiryo, "ＭＳ Ｐゴシック", "MS PGothic", sans-serif;
+  font-size: 60px;
+  font-style: italic;
+}
+
+.user-title1 {
+  position: absolute;
+  left: 540px;
+  top: 160px;
+}
+
+.user-list {
+  position: absolute;
+  left: 510px;
+  top: 250px;
+}
+
+.user-list1 {
+  font-size: 30px;
+}
+
+.explanation {
+  position: absolute;
+  left: 550px;
+  top: 160px;
+}
+
+.main-content {
+  position: absolute;
+  left: 490px;
+  top: 250px;
+}
+
+.content1 {
+  font-size: 20px;
+  margin-bottom: 30px;
+}
+
+.content2 {
+  left: 400px;
+}
+
+.content-number {
+  font-style: italic;
+}
+
+.content-form {
+  width: 400px;
+  height: 100px;
+  margin-top: 10px;
+  background-color: #FFFFCC;
+  font-size: 18px;
+}
+
+.send {
+  ox-shadow:none;
+  position:relative;
+  display:block;
+  margin-top:15px;
+  margin-bottom:30px;
+  padding:17px;
+  width:270px;
+  font-size:1.2em;
+  background:#f26964;
+  color:#f4f4f4;
+  box-shadow:0px 3px 0px #ab4b47;
+  cursor:pointer;
+  -webkit-border-radius: 6px;
+     -moz-border-radius: 6px;
+      -ms-border-radius: 6px;
+       -o-border-radius: 6px;
+          border-radius: 6px;
+          -webkit-transition: all .1s ease-in-out;
+             -moz-transition: all .1s ease-in-out;
+                  transition: all .1s ease-in-out;
+
+  outline:none;
+}
+
+.user-show-name {
+  position: absolute;
+  left: 400px;
+  font-family: Lato, "Noto Sans JP", "游ゴシック Medium", "游ゴシック体", "Yu Gothic Medium", YuGothic, "ヒラギノ角ゴ ProN", "Hiragino Kaku Gothic ProN", "メイリオ", Meiryo, "ＭＳ Ｐゴシック", "MS PGothic", sans-serif;
+  font-size: 40px;
+  font-style: italic;
+}
+
+.past-comment {
+  position: absolute;
+  left: 400px;
+  top: 210px;
+
+}
+
+.past-comment-individual {
+  border-style: ridge;
+  width: 600px;
+}
+
+.past-comment-individual1 {
+  margin: 20px;
+}
+
+.past-comment1 {
+  font-size: 30px;
+  margin-bottom: 5px;
+}
+
+.past-comment2 {
+  font-size: 20px;
+  margin-bottom: 20px;
+}
+
+.users-show-button {
+  ox-shadow:none;
+  position:relative;
+  display:block;
+  margin-top:50px;
+  margin-bottom:30px;
+  padding:17px;
+  width:270px;
+  font-size:1.2em;
+  background:#f26964;
+  color:#f4f4f4;
+  box-shadow:0px 3px 0px #ab4b47;
+  cursor:pointer;
+  -webkit-border-radius: 6px;
+     -moz-border-radius: 6px;
+      -ms-border-radius: 6px;
+       -o-border-radius: 6px;
+          border-radius: 6px;
+          -webkit-transition: all .1s ease-in-out;
+             -moz-transition: all .1s ease-in-out;
+                  transition: all .1s ease-in-out;
+
+  outline:none;
+}
+
+.character-message {
+  position: absolute;
+  left: 180px;
+  top: 170px;
+}
+
+.character-message1 {
+  position: absolute;
+  left: 1000px;
+  top: 500px;
+}
+
+.character {
+  position: absolute;
+  left: 180px;
+  top: 170px;
+}
+
+.logout1 {
+  position: absolute;
+  right: 0px;
+}
+
+.toppage1 {
+  position: absolute;
+  right: 100px;
+}
+
+.my-header {
+  background-color: #FF7F50;
+  border-bottom: 1px solid #EEE;
+}
+
+.login-title0 {
+  padding-top: 15px;
+  height: 50px;
+  background: #FFCC99;
+  margin-bottom: 1px;
+  text-align: center;
+}
+
+.login-title {
+  text-decoration: none;
+  color: #444;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.login-login {
+  position: absolute;
+  left: 500px;
+}
+
+.login-login1 {
+  font-size: 12px;
+  font-weight: lighter;
+}
+
+.original_css1 {
+  width: 400px;
+  height: 33px;
+  font-size: 15px;
+  background-color: #FFEBCD;
+}
+
+.actions {
+  height: 50px;
+  margin-top: 17px;
+}
+
+.buttoncss_original1 {
+  width: 144px;
+  height: 42px;
+  background-color: #16ab39;
+  color: #FFFFFF;
+  text-shadow: none;
+}

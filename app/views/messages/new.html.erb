@@ -1,0 +1,64 @@
+<body>
+  <%= render partial: 'shared/header' %>
+
+  <div class="title">
+    <p>Happiness</p>
+  </div>
+
+  <div class="explanation">
+    <span class="explanation1">〜<%= @user.nickname %>さんに普段言えない思いを届けましょう〜</span>
+  </div>
+
+  <div class="character-message">
+    <div class="character1-message">
+      <img src="<%= asset_path "character1.jpeg" %>" width="200" height="200" />
+    </div>
+  </div>
+
+  <div class="character-message1">
+    <div class="character1-message1">
+      <img src="<%= asset_path "character1.jpeg" %>" width="200" height="200" />
+    </div>
+  </div>
+
+  <%= form_for(@message) do |f| %>
+  <div class="main-content">
+    <div class="content1">
+      <div class="content2">
+        <span class="content-number">
+          1
+        </span>
+        <span class="content-text">
+          こういうところが優しいよ
+        </span>
+      </div>
+      <%= f.text_area :body1, :placeholder => "いつもみんなのこと考えてくれているよね", :class => 'content-form' %>
+    </div>
+    <div class="content1">
+      <div class="content2">
+        <span class="content-number">
+          2
+        </span>
+        <span class="content-text">
+          こういうところがすごいよ
+        </span>
+      </div>
+      <%= f.text_area :body2, :placeholder => "すごく気配りできるよね", :class => 'content-form' %>
+    </div>
+    <div class="content1">
+      <div class="content2">
+        <span class="content-number">
+          3
+        </span>
+        <span class="content-text">
+          普段言えないありがとうを
+        </span>
+      </div>
+      <%= f.text_area :body3, :placeholder => "いつもありがとう", :class => 'content-form' %>
+    </div>
+
+    <%= f.submit "届ける", class: "send"%>
+  <% end %>
+
+
+</body>

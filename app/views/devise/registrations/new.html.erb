@@ -1,0 +1,45 @@
+<div class="my-header">
+  <div class="login-title0">
+    <span class="login-title">Happiness</span>
+  </div>
+</div>
+
+<div class="login-login">
+  <div class="login-login1">
+    <h2>登録する</h2>
+  </div>
+
+  <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+    <%= devise_error_messages! %>
+
+    <div class="field">
+      <%= f.label :email %><br />
+      <%= f.email_field :email, class: "original_css1", placeholder: "メールアドレス", autofocus: true %>
+    </div>
+
+    <div class="field">
+      <%= f.label :nickname %><br />
+      <%= f.text_field :nickname, class: "original_css1", placeholder: "ニックネーム", autofocus: true %>
+    </div>
+
+    <div class="field">
+      <%= f.label :password %>
+      <% if @minimum_password_length %>
+      <em>(<%= @minimum_password_length %> characters minimum)</em>
+      <% end %><br />
+      <%= f.password_field :password, class: "original_css1", placeholder: "パスワード", autocomplete: "off" %>
+    </div>
+
+    <div class="field">
+      <%= f.label :password_confirmation %><br />
+      <%= f.password_field :password_confirmation, class: "original_css1", placeholder: "確認のためパスワードをもう一度お願いします", autocomplete: "off" %>
+    </div>
+
+    <div class="actions">
+      <%= f.submit "登録する",class: "buttoncss_original1" %>
+    </div>
+  <% end %>
+
+  <%= render "devise/shared/links" %>
+
+</div>

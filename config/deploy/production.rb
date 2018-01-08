@@ -7,7 +7,7 @@
 # server "example.com", user: "deploy", roles: %w{app web}, other_property: :other_value
 # server "db.example.com", user: "deploy", roles: %w{db}
 
-server '13.230.220.23', roles: %w{app db web}
+server '13.230.220.23', user: 'ec2-user', roles: %w{app db web}
 
 # role-based syntax
 # ==================
@@ -21,7 +21,7 @@ server '13.230.220.23', roles: %w{app db web}
 # role :web, %w{user1@primary.com user2@additional.com}, other_property: :other_value
 # role :db,  %w{deploy@example.com}
 
-set :ssh_options, keys: '~/.ssh/first_aws_rsa' 
+set :ssh_options, keys: '~/.ssh/first_aws_rsa'
 
 # Configuration
 # =============

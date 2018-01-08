@@ -22,7 +22,7 @@ server '13.230.220.23', user: 'ec2-user', roles: %w{app db web}
 # role :db,  %w{deploy@example.com}
 
 set :ssh_options, {
-   keys: [File.expand_path('~/.ssh/yamazaki_816816.pem)')]
+   keys: [File.expand_path('~/.ssh/aws_git_rsa)')]
 }
 
 # Configuration

@@ -7,6 +7,10 @@
     <p>〜メッセージを届けたい人を選んでください〜</p>
   </div>
 
+  <div class="my-account">
+    <%= link_to 'マイページ', edit_user_path(current_user.id), method: :get, class:'mypage' %>
+  </div>
+
   <div class="logout">
     <%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class:'logout1' %>
   </div>

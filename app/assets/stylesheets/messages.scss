@@ -113,6 +113,10 @@ body {
 
 }
 
+.first-comment {
+  font-size: 20px;
+}
+
 .past-comment-individual {
   border-style: ridge;
   width: 600px;
@@ -175,6 +179,11 @@ body {
   top: 170px;
 }
 
+.mypage {
+  position: absolute;
+  right: 100px;
+}
+
 .logout1 {
   position: absolute;
   right: 0px;
@@ -233,4 +242,14 @@ body {
   background-color: #16ab39;
   color: #FFFFFF;
   text-shadow: none;
+}
+
+.edit-comment {
+  position: absolute;
+  left: 400px;
+  top: 150px;
+}
+
+.edit-comment-1 {
+  font-size: 30px;
 }

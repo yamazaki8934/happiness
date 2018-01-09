@@ -4,41 +4,22 @@ lock "~> 3.10.1"
 set :application, "happiness"
 set :repo_url, "git@github.com:yamazaki8934/happiness.git"
 
-set :linked_dirs, fetch(:linked_dirs, []).push('log', 'tmp/pids', 'tmp/cache', 'tmp/sockets', 'vendor/bundle', 'public/system', 'public/uploads')
-
-set :rbenv_type, :user
-set :rbenv_ruby, '2.3.1'
-
-set :ssh_options, auth_methods: ['publickey'],
-                  keys: ['/Users/yamazakihiroki/.ssh/yamazaki_816816.pem']
-
-set :unicorn_pid, -> { "#{shared_path}/tmp/pids/unicorn.pid" }
-set :unicorn_config_path, -> { "#{current_path}/config/unicorn.rb" }
-set :keep_releases, 5
-set :linked_files, %w{ config/secrets.yml }
-
-after 'deploy:publishing', 'deploy:restart'
-namespace :deploy do
-  task :restart do
-    invoke 'unicorn:restart'
-  end
-end
-
-# set :application, "my_app_name"
-# set :repo_url, "git@example.com:me/my_repo.git"
-
 # Default branch is :master
 # ask :branch, `git rev-parse --abbrev-ref HEAD`.chomp
+set :branch, 'master'
 
 # Default deploy_to directory is /var/www/my_app_name
 # set :deploy_to, "/var/www/my_app_name"
+set :deploy_to, '/var/www/rails/happiness'
 
 # Default value for :format is :airbrussh.
 # set :format, :airbrussh
+set :linked_files, fetch(:linked_files, []).push('config/settings.yml')
 
 # You can configure the Airbrussh format using :format_options.
 # These are the defaults.
 # set :format_options, command_output: true, log_file: "log/capistrano.log", color: :auto, truncate: :auto
+set :linked_dirs, fetch(:linked_dirs, []).push('log', 'tmp/pids', 'tmp/cache', 'tmp/sockets', 'vendor/bundle', 'public/system')
 
 # Default value for :pty is false
 # set :pty, true
@@ -57,6 +38,46 @@ end
 
 # Default value for keep_releases is 5
 # set :keep_releases, 5
+set :keep_releases, 5
 
 # Uncomment the following to require manually verifying the host key before first deploy.
 # set :ssh_options, verify_host_key: :secure
+set :rbenv_ruby, '2.3.0'
+
+set :log_level, :debug
+
+namespace :deploy do
+  desc 'Restart application'
+  task :restart do
+    invoke 'unicorn:restart'
+  end
+
+  desc 'Create database'
+  task :db_create do
+    on roles(:db) do |host|
+      with rails_env: fetch(:rails_env) do
+        within current_path do
+          execute :bundle, :exec, :rake, 'db:create'
+        end
+      end
+    end
+  end
+
+  desc 'Run seed'
+  task :seed do
+    on roles(:app) do
+      with rails_env: fetch(:rails_env) do
+        within current_path do
+          execute :bundle, :exec, :rake, 'db:seed'
+        end
+      end
+    end
+  end
+
+  after :publishing, :restart
+
+  after :restart, :clear_cache do
+    on roles(:web), in: :groups, limit: 3, wait: 10 do
+    end
+  end
+end

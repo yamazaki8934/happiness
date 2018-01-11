@@ -5,6 +5,27 @@
     <%= current_user.nickname %>さんのマイページ
   </div>
 
+  <div class="change-nickname">
+    <div class="account-edit">
+      アカウント編集
+    </div>
+    <div class="account-edit0">
+      <div class="account-edit1">
+        <%= form_for(current_user) do |f| %>
+        <div class="nickname">
+          <%= f.label :nickname, 'ニックネームの変更', :class => 'nickname-change' %>
+          <%= f.text_field :nickname, :placeholder => "ニックネーム", :class => 'nickname-change1' %>
+        </div>
+        <div class="nickname1">
+          <%= f.label :email, 'メールアドレスの変更', :class => 'address-change' %>
+          <%= f.text_field :email, :placeholder => "メールアドレス", :class => 'nickname-change2' %>
+        </div>
+          <%= f.submit '変更', :class=>"nickname-btn" %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+
   <div class="edit-comment">
     <div class="edit-comment-1">
       〜あなたへのみんなからのコメント〜

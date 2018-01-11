@@ -118,7 +118,7 @@ body {
 }
 
 .past-comment-individual {
-  border-style: ridge;
+  border-style: dashed;
   width: 600px;
 }
 
@@ -161,16 +161,14 @@ body {
   outline:none;
 }
 
-.character-message {
-  position: absolute;
-  left: 180px;
-  top: 170px;
-}
+
 
 .character-message1 {
+  background-image: image-url("character1.jpeg");
   position: absolute;
   left: 1000px;
   top: 500px;
+  background-size: 200px;
 }
 
 .character {
@@ -178,6 +176,24 @@ body {
   left: 180px;
   top: 170px;
 }
+
+.character1 {
+  background-image: image-url("character1.jpeg");
+  width: 200px;
+  height: 200px;
+  background-size: 200px;
+}
+
+.character1-message {
+  background-image: image-url("character1.jpeg");
+  width: 200px;
+  height: 200px;
+  background-size: 200px;
+  position: absolute;
+  left: 200px;
+  top: 200px;
+}
+
 
 .mypage {
   position: absolute;
@@ -244,12 +260,263 @@ body {
   text-shadow: none;
 }
 
-.edit-comment {
+.change-nickname {
   position: absolute;
   left: 400px;
   top: 150px;
 }
 
+.account-edit {
+  font-weight: bold;
+}
+
+.account-edit0 {
+  border-style: inset;
+  margin-top: 20px;
+}
+
+.account-edit1 {
+  margin: 50px;
+
+}
+
+.nickname-change1 {
+  margin-left: 25px;
+  padding-left: 10px;
+  width: 300px;
+  height: 33px;
+  font-size: 15px;
+  background-color: #FFEBCD;
+}
+
+.nickname1 {
+  position: relative;
+  top: 20px;
+}
+
+.nickname-change2 {
+  margin-left: 10px;
+  padding-left: 10px;
+  width: 300px;
+  height: 33px;
+  font-size: 15px;
+  background-color: #FFEBCD;
+}
+
+.nickname-btn {
+  width: 144px;
+  height: 42px;
+  background-color: #16ab39;
+  color: #FFFFFF;
+  text-shadow: none;
+  position: relative;
+  top: 35px;
+}
+
+.edit-comment {
+  position: absolute;
+  left: 400px;
+  top: 480px;
+}
+
 .edit-comment-1 {
   font-size: 30px;
+}
+
+@media screen and ( max-width:479px )
+{
+  body {
+    background-color: #FFCC99;
+  }
+
+  .user-title {
+    position: absolute;
+    left: 20px;
+    font-family: Lato, "Noto Sans JP", "游ゴシック Medium", "游ゴシック体", "Yu Gothic Medium", YuGothic, "ヒラギノ角ゴ ProN", "Hiragino Kaku Gothic ProN", "メイリオ", Meiryo, "ＭＳ Ｐゴシック", "MS PGothic", sans-serif;
+    font-size: 35px;
+    font-style: italic;
+  }
+
+  .user-title1 {
+    position: absolute;
+    left: 20px;
+    top: 115px;
+  }
+
+  .user-list {
+    position: absolute;
+    left: 80px;
+    top: 380px;
+  }
+
+  .user-list1 {
+    font-size: 30px;
+  }
+
+  .character {
+    position: absolute;
+    left: 80px;
+    top: 170px;
+  }
+
+  .my-header {
+    background-color: #FF7F50;
+    border-bottom: 1px solid #EEE;
+  }
+
+  .login-title0 {
+    padding-top: 15px;
+    height: 50px;
+    background: #FFCC99;
+    margin-bottom: 1px;
+    text-align: center;
+  }
+
+  .login-title {
+    text-decoration: none;
+    color: #444;
+    font-size: 20px;
+    font-weight: bold;
+  }
+
+  .login-login {
+    position: absolute;
+    left: 10px;
+  }
+
+  .login-login1 {
+    font-size: 12px;
+    font-weight: lighter;
+  }
+
+  .original_css1 {
+    width: 300px;
+    height: 33px;
+    font-size: 15px;
+    background-color: #FFEBCD;
+  }
+
+  .actions {
+    height: 50px;
+    margin-top: 17px;
+  }
+
+  .user-show-name {
+    position: absolute;
+    left: 10px;
+    top: 25px;
+    font-family: Lato, "Noto Sans JP", "游ゴシック Medium", "游ゴシック体", "Yu Gothic Medium", YuGothic, "ヒラギノ角ゴ ProN", "Hiragino Kaku Gothic ProN", "メイリオ", Meiryo, "ＭＳ Ｐゴシック", "MS PGothic", sans-serif;
+    font-size: 30px;
+    font-style: italic;
+  }
+
+  .past-comment {
+    position: absolute;
+    left: 10px;
+    top: 150px;
+
+  }
+
+  .first-comment {
+    font-size: 15px;
+  }
+
+  .past-comment-individual {
+    border-style: dashed;
+    width: 380px;
+  }
+
+  .past-comment-individual1 {
+    margin: 20px;
+  }
+
+  .past-comment1 {
+    font-size: 20px;
+    margin-bottom: 5px;
+  }
+
+  .past-comment2 {
+    font-size: 20px;
+    margin-bottom: 20px;
+  }
+
+  .title {
+    position: absolute;
+    left: 90px;
+    top: 30px;
+    font-family: Lato, "Noto Sans JP", "游ゴシック Medium", "游ゴシック体", "Yu Gothic Medium", YuGothic, "ヒラギノ角ゴ ProN", "Hiragino Kaku Gothic ProN", "メイリオ", Meiryo, "ＭＳ Ｐゴシック", "MS PGothic", sans-serif;
+    font-size: 40px;
+    font-style: italic;
+  }
+
+  .explanation {
+    position: absolute;
+    left: 20px;
+    top: 120px;
+  }
+
+  .character1-message {
+    background-image: image-url("character1.jpeg");
+    position: absolute;
+    left: 20px;
+    top: 170px;
+    background-size: 200px;
+  }
+
+
+  .main-content {
+    position: absolute;
+    left: 20px;
+    top: 420px;
+  }
+
+  .content-form {
+    width: 320px;
+    height: 100px;
+    margin-top: 10px;
+    background-color: #FFFFCC;
+    font-size: 18px;
+  }
+
+  .user-title {
+    position: absolute;
+    left: 20px;
+    top: 50px;
+  }
+
+  .change-nickname {
+    position: absolute;
+    left: 10px;
+  }
+
+  .nickname-change2 {
+    position: relative;
+    left: 15px;
+  }
+
+  .nickname-btn {
+    position: relative;
+    left: 25px;
+  }
+
+  .account-edit0 {
+    width: 350px;
+  }
+
+  .nickname-change1 {
+    width: 240px;
+  }
+
+  .nickname-change2 {
+    width: 240px;
+  }
+
+  .edit-comment {
+    position: absolute;
+    left: 10px;
+  }
+
+  .edit-comment-1 {
+    font-size: 20px;
+  }
 }

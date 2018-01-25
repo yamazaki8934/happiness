@@ -1,13 +1,69 @@
+<head>
+  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+</head>
 <body>
-  <%= render partial: 'shared/header' %>
+  <!-- <%= render partial: 'shared/header' %> -->
+  <ul class="drop-menu">
+    <li>
+      <ul>
+        <li>
+          <a href="#"><%= link_to 'トップページへ', root_path, class:'toppage2' %></a>
+        </li>
+        <li>
+          <%= link_to 'あなた宛のレビューと手紙を読む', receife_path(current_user.id), method: :get %>
+        </li>
+        <li>
+          <%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class:'logout2' %>
+        </li>
+      </ul>
+    </li>
+  </ul>
 
-  <div class="user-title">
-    <%= current_user.nickname %>さんのマイページ
+  <div class="user-title-edit">
+    <%= current_user.nickname %>さん、こんにちは！
   </div>
 
-  <div class="change-nickname">
+  <div class="change-own-page1">
+    <div class="change-own-page2">
+      まずはみんなにレビューしてほしい項目を５つ登録しましょう！
+    </div>
+    <%= form_for(current_user) do |f| %>
+    <div class="change-own-page3">
+      1<%= f.text_field :ratename1, :placeholder => "たとえば：優しさ", :class => 'nickname-change1' %>
+    </div>
+    <div class="change-own-page3">
+      2<%= f.text_field :ratename2, :placeholder => "たとえば：ピュア", :class => 'nickname-change1' %>
+    </div>
+    <div class="change-own-page3">
+      3<%= f.text_field :ratename3, :placeholder => "たとえば：包容力", :class => 'nickname-change1' %>
+    </div>
+    <div class="change-own-page3">
+      4<%= f.text_field :ratename4, :placeholder => "ご自由にどうぞ笑", :class => 'nickname-change1' %>
+    </div>
+    <div class="change-own-page3">
+      5<%= f.text_field :ratename5, :placeholder => "ご自由にどうぞ笑", :class => 'nickname-change1' %>
+    </div>
+
+    <div class="introduction1">
+      <span>
+        <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
+      </span>
+      <span class="introduction2">
+        つぶやき
+      </span>
+      <div class="introduction3">
+        <%= f.text_area :introduction, :placeholder => "よろしくお願いします！", :class => 'nickname-change2' %>
+      </div>
+    </div>
+
+    <%= f.submit 'これで登録！', :class=>"nickname-btn" %>
+    <% end %>
+  </div>
+
+  <!-- <div class="change-nickname">
     <div class="account-edit">
-      アカウント編集
+      登録情報の変更
     </div>
     <div class="account-edit0">
       <div class="account-edit1">
@@ -24,58 +80,6 @@
         <% end %>
       </div>
     </div>
-  </div>
+  </div> -->
 
-  <div class="edit-comment">
-    <div class="edit-comment-1">
-      〜あなたへのみんなからのコメント〜
-    </div>
-    <div class="edit-comment-2">
-      <% current_user.messages.each do |message| %>
-      <div class="past-comment-individual">
-        <div class="past-comment-individual1">
-          <div class="past-comment1">
-            <span class="past-comment-number">
-              1
-            </span>
-            <span class="past-comment-text">
-              こういうところが優しいよ
-            </span>
-          </div>
-          <div class="past-comment2">
-            <div class="past-comment2-content">
-              <%= message.body1 %>
-            </div>
-          </div>
-          <div class="past-comment1">
-            <span class="past-comment-number">
-              2
-            </span>
-            <span class="past-comment-text">
-              こういうところがすごいよ
-            </span>
-          </div>
-          <div class="past-comment2">
-            <div class="past-comment2-content">
-              <%= message.body2 %>
-            </div>
-          </div>
-          <div class="past-comment1">
-            <span class="past-comment-number">
-              3
-            </span>
-            <span class="past-comment-text">
-              普段言えないありがとうを
-            </span>
-          </div>
-          <div class="past-comment2">
-            <div class="past-comment2-content">
-              <%= message.body3 %>
-            </div>
-          </div>
-        </div>
-      </div>
-      <% end %>
-    </div>
-  </div>
 </body>

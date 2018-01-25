@@ -1,0 +1,11 @@
+<div class="left-box-edit">
+  <div class="edit-profile">
+    <%= link_to 'プロフィールを編集', edit_user_path(current_user.id), method: :get %>
+  </div>
+  <div class="received-review">
+    <%= link_to 'あなたが受け取ったレビュー', receife_path(current_user.id), method: :get %>
+  </div>
+  <div class="received-review">
+    <%= link_to 'あなたが送ったレビュー', user_sent_path(current_user.id), method: :get %>
+  </div>
+</div>

@@ -6,7 +6,7 @@
   </div>
 
   <div class="explanation">
-    <span class="explanation1">〜<%= @user.nickname %>さんに普段言えない思いを届けましょう〜</span>
+    <span class="explanation1">　<%= @user.nickname %>さんにレビューを届けてみましょう!</span>
   </div>
 
   <div class="character-message">
@@ -16,7 +16,47 @@
 
   <%= form_for(@message) do |f| %>
   <div class="main-content">
+    <span class="new-review-number">
+      1
+    </span>
+    <span class="message-review">
+      レビューを届けましょう!
+    </span>
+    <div class="field0">
+      <div class="field" id="star">
+        <%= @user.ratename1 %>
+        <%= f.hidden_field :rate1, id: :review_star %>
+      </div>
+      <div class="field" id="star2">
+        <%= @user.ratename2 %>
+        <%= f.hidden_field :rate2, id: :review_star2 %>
+      </div>
+      <div class="field" id="star3">
+        <%= @user.ratename3 %>
+        <%= f.hidden_field :rate3, id: :review_star3 %>
+      </div>
+      <div class="field" id="star4">
+        <%= @user.ratename4 %>
+        <%= f.hidden_field :rate4, id: :review_star4 %>
+      </div>
+      <div class="field" id="star5">
+        <%= @user.ratename5 %>
+        <%= f.hidden_field :rate5, id: :review_star5 %>
+      </div>
+    </div>
     <div class="content1">
+      <div class="content2">
+        <span class="new-review-number">
+          2
+        </span>
+        <span class="message-review">
+          手紙も書いてみましょう！
+        </span>
+      </div>
+      <%= f.text_area :body1, :placeholder => "伝えたいことを自由に書いてみましょう", :class => 'content-form' %>
+    </div>
+
+    <!-- <div class="content1">
       <div class="content2">
         <span class="content-number">
           1
@@ -48,10 +88,48 @@
         </span>
       </div>
       <%= f.text_area :body3, :placeholder => "いつもありがとう", :class => 'content-form' %>
-    </div>
+    </div> -->
 
     <%= f.submit "届ける", class: "send"%>
+
+    <script>
+    $('#star').raty({
+      size     : 36,
+      starOff:  '<%= asset_path('star-off.png') %>',
+      starOn : '<%= asset_path('star-on.png') %>',
+      scoreName: 'message[rate1]'
+    });
+
+    $('#star2').raty({
+      size     : 36,
+      starOff:  '<%= asset_path('star-off.png') %>',
+      starOn : '<%= asset_path('star-on.png') %>',
+      scoreName: 'message[rate2]'
+    });
+
+    $('#star3').raty({
+      size     : 36,
+      starOff:  '<%= asset_path('star-off.png') %>',
+      starOn : '<%= asset_path('star-on.png') %>',
+      scoreName: 'message[rate3]'
+    });
+
+    $('#star4').raty({
+      size     : 36,
+      starOff:  '<%= asset_path('star-off.png') %>',
+      starOn : '<%= asset_path('star-on.png') %>',
+      scoreName: 'message[rate4]'
+    });
+
+    $('#star5').raty({
+      size     : 36,
+      starOff:  '<%= asset_path('star-off.png') %>',
+      starOn : '<%= asset_path('star-on.png') %>',
+      scoreName: 'message[rate5]'
+    });
+    </script>
+
   <% end %>
 
-
+  
 </body>

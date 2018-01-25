@@ -1,0 +1,147 @@
+<head>
+  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+</head>
+<body>
+  <ul class="drop-menu">
+    <li>
+      <ul>
+        <li>
+          <a href="#"><%= link_to 'トップページへ', root_path, class:'toppage2' %></a>
+        </li>
+        <li>
+          <%= link_to 'あなた宛のレビューと手紙を読む', receife_path(current_user.id), method: :get %>
+        </li>
+        <li>
+          <%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class:'logout2' %>
+        </li>
+      </ul>
+    </li>
+  </ul>
+
+  <div class="my-review">
+    <% if current_user.ratename1.blank? %>
+    <div class="non-profile1">
+      <div class="non-profile2">
+        <p>まだプロフィールが設定されていません</p>
+        <p>さっそくプロフィールを設定してみんなからのレビューをもらいましょう！</p>
+      </div>
+      <div class="non-profile-button">
+        <%= link_to "プロフィールを設定する", edit_user_path %>
+      </div>
+    </div>
+    <% elsif current_user.messages.blank? %>
+    <div class="first-comment">
+      <p>あなたへのレビューはまだありません</p>
+      <P>みんなからのレビューを待ちましょう！</P>
+      <div class="users-show-button">
+        <%= link_to "トップページへ戻る", root_path %>
+      </div>
+    </div>
+    <% else %>
+    <div class="user-show-review">
+      <div class="review-box">
+        <div class="user-show-review1">
+          あなたへのレビュー　<%= @counts %>件
+        </div>
+      </div>
+      <div class="user-show-review2">
+        <div class="change-own-review0">
+          <div class="review-number0">
+            <span class="change-own-review">
+              <%= @user.ratename1 %>
+            </span>
+            <span class="review-number">
+              <%= @rate1 %>
+            </span>
+          </div>
+          <div class="review-number0">
+            <span class="change-own-review">
+              <%= @user.ratename2 %>
+            </span>
+            <span class="review-number">
+              <%= @rate2 %>
+            </span>
+          </div>
+          <div class="review-number0">
+            <span class="change-own-review">
+              <%= @user.ratename3 %>
+            </span>
+            <span class="review-number">
+              <%= @rate3 %>
+            </span>
+          </div>
+        </div>
+        <div class="change-own-review1">
+          <div class="review-number0">
+            <span class="change-own-review2">
+              <%= @user.ratename4 %>
+            </span>
+            <span class="review-number">
+              <%= @rate4 %>
+            </span>
+          </div>
+          <div class="review-number0">
+            <span class="change-own-review2">
+              <%= @user.ratename5 %>
+            </span>
+            <span class="review-number">
+              <%= @rate5 %>
+            </span>
+          </div>
+        </div>
+        <div class="change-own-page4">
+          <span>
+            <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
+          </span>
+          <span class="introduction2">
+            つぶやき
+          </span>
+        </div>
+        <div class="change-own-page3">
+          <%= @user.introduction %>
+        </div>
+      </div>
+    </div>
+
+    <div class="past-comment">
+
+      <div class="past-review">
+        あなたへの全ての手紙
+      </div>
+        <% @user.messages.each do |message| %>
+        <div class="review-all">
+          <div class="review-all1">
+            <%= message.body1 %>
+          </div>
+          <div class="review-all2">
+            <%= message.created_at.strftime("%Y年%m月%d日 %H時%M分") %>
+          </div>
+          <% if message.like_user(current_user.id) %>
+            <%= button_to message_likes_path(like, message_id: message.id), method: :delete, id: "like-buttons", remote: true do %>
+              <div class="smile">
+
+              </div>
+              <span>
+                <%= message.like_count %>
+              </span>
+            <% end %>
+          <% else %>
+            <%= button_to message_like_path(message.id), id: "like-button", remote: true do %>
+              <div class="face">
+              </div>
+              <span>
+                <%= message.likes_count %>
+              </span>
+            <% end %>
+          <% end %>
+          </div>
+        <% end %>
+      <% end %>
+
+  </div>
+</div>
+
+
+
+</body>

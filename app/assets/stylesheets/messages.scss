@@ -11,22 +11,37 @@ body {
 .title {
   position: absolute;
   left: 550px;
-  font-family: Lato, "Noto Sans JP", "游ゴシック Medium", "游ゴシック体", "Yu Gothic Medium", YuGothic, "ヒラギノ角ゴ ProN", "Hiragino Kaku Gothic ProN", "メイリオ", Meiryo, "ＭＳ Ｐゴシック", "MS PGothic", sans-serif;
-  font-size: 60px;
-  font-style: italic;
+  font-weight: 700;
+  margin: 0px;
+  word-wrap: break-word;
+  font-family: Circular,-apple-system,BlinkMacSystemFont,Roboto,Helvetica Neue,sans-serif;
+  font-size: 36px;
+  line-height: 40px;
+  letter-spacing: -0.6px;
+  padding-top: 6px;
+  padding-bottom: 6px;
+  color: #484848;
 }
 
 .user-title {
   position: absolute;
-  left: 460px;
-  font-family: Lato, "Noto Sans JP", "游ゴシック Medium", "游ゴシック体", "Yu Gothic Medium", YuGothic, "ヒラギノ角ゴ ProN", "Hiragino Kaku Gothic ProN", "メイリオ", Meiryo, "ＭＳ Ｐゴシック", "MS PGothic", sans-serif;
-  font-size: 60px;
-  font-style: italic;
+  left: 490px;
+  top: 80px;
+  font-weight: 700;
+  margin: 0px;
+  word-wrap: break-word;
+  font-family: Circular,-apple-system,BlinkMacSystemFont,Roboto,Helvetica Neue,sans-serif;
+  font-size: 36px;
+  line-height: 40px;
+  letter-spacing: -0.6px;
+  padding-top: 6px;
+  padding-bottom: 6px;
+  color: #484848;
 }
 
 .user-title1 {
   position: absolute;
-  left: 540px;
+  left: 490px;
   top: 160px;
 }
 
@@ -44,16 +59,44 @@ body {
   position: absolute;
   left: 550px;
   top: 160px;
+  font-family: "Kozuka Gothic Pro",sans-serif;
+  font-weight: 520;
+  font-size: 16px;
+  line-height: 32px;
+  margin-bottom: 32px;
+}
+
+.new-review-number {
+  display: inline-block;
+    width: 38px;
+    height: 38px;
+    margin: 0 8px 0 0;
+    border-radius: 50%;
+    background: #ea352d;
+    text-align: center;
+    line-height: 40px;
+    font-size: 24px;
+    color: #fff;
 }
 
 .main-content {
   position: absolute;
   left: 490px;
-  top: 250px;
+  top: 240px;
+}
+
+.message-review {
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.field0 {
+  margin-top: 10px;
 }
 
 .content1 {
   font-size: 20px;
+  margin-top: 40px;
   margin-bottom: 30px;
 }
 
@@ -66,8 +109,16 @@ body {
 }
 
 .content-form {
-  width: 400px;
   height: 100px;
+  width: 300px;
+  margin-top: 5px;
+  position: relative;
+  left: 0px;
+  border-radius: 4px !important;
+  border: 1px solid #DBDBDB !important;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1) !important;
+  // display: table !important;
+  table-layout: fixed !important;
   margin-top: 10px;
   background-color: #FFFFCC;
   font-size: 18px;
@@ -101,20 +152,196 @@ body {
 .user-show-name {
   position: absolute;
   left: 400px;
-  font-family: Lato, "Noto Sans JP", "游ゴシック Medium", "游ゴシック体", "Yu Gothic Medium", YuGothic, "ヒラギノ角ゴ ProN", "Hiragino Kaku Gothic ProN", "メイリオ", Meiryo, "ＭＳ Ｐゴシック", "MS PGothic", sans-serif;
-  font-size: 40px;
-  font-style: italic;
+  top: 30px;
+  font-weight: 700;
+  margin: 0px;
+  word-wrap: break-word;
+  font-family: Circular,-apple-system,BlinkMacSystemFont,Roboto,Helvetica Neue,sans-serif;
+  font-size: 36px;
+  line-height: 40px;
+  letter-spacing: -0.6px;
+  padding-top: 6px;
+  padding-bottom: 6px;
+  color: #484848;
+}
+
+.user-show-review {
+  position: absolute;
+  left: 400px;
+  top: 120px;
+}
+
+.review-box {
+  margin-top: 40px;
+  border-radius: 6px;
+  display: inline-block;
+  padding: 6px 9px;
+  min-width: 28px;
+  position: relative;
+  overflow: hidden;
+  vertical-align: middle;
+  background: linear-gradient(140deg, #ffc333 55%, #FFB400 55%, #FFB400 100%);
+  line-height: 1.1;
+  text-rendering: optimizelegibility;
+  text-align: center;
+}
+
+.user-show-review1 {
+  font-weight: 700;
+  margin: 0px;
+  word-wrap: break-word;
+  font-family: Circular,-apple-system,BlinkMacSystemFont,Roboto,Helvetica Neue,sans-serif;
+  font-size: 28px;
+  line-height: 32px;
+  letter-spacing: -0.6px;
+  padding-top: 2px;
+  padding-bottom: 2px;
+  color: #484848;
+}
+
+.user-show-review2 {
+  margin-top: 40px;
+}
+
+.change-own-review0 {
+  color: #484848 !important;
+    font-family: Circular,-apple-system,BlinkMacSystemFont,Roboto,Helvetica Neue,sans-serif !important;
+    font-size: 17px !important;
+    font-weight: 300 !important;
+    letter-spacing: 0.2px !important;
+    line-height: 22px !important;
+}
+
+
+
+.review-number {
+  margin-left: 20px;
+  color: #008489 !important;
+    font: inherit !important;
+    font-family: Circular,-apple-system,BlinkMacSystemFont,Roboto,Helvetica Neue,sans-serif !important;
+    text-decoration: none !important;
+    -webkit-appearance: none !important;
+    -moz-appearance: none !important;
+    appearance: none !important;
+    background: transparent !important;
+    border: 0px !important;
+    cursor: pointer !important;
+    -webkit-user-select: auto !important;
+    -moz-user-select: auto !important;
+    -ms-user-select: auto !important;
+    user-select: auto !important;
+    text-align: left !important;
+}
+
+.review-number0 {
+  margin-bottom: 15px;
+  color: #484848;
+}
+
+.change-own-review1 {
+  position: absolute;
+  top: 130px;
+  left: 200px;
+  width: 100%;
+}
+
+.change-own-page4 {
+  font-weight: 700;
+  margin: 0px;
+  word-wrap: break-word;
+  font-family: Circular,-apple-system,BlinkMacSystemFont,Roboto,Helvetica Neue,sans-serif;
+  font-size: 20px;
+  line-height: 32px;
+  letter-spacing: -0.6px;
+  padding-top: 2px;
+  padding-bottom: 2px;
+  color: #484848;
+  margin-top: 20px;
+}
+
+.past-review {
+  font-weight: 700;
+  margin: 0px;
+  word-wrap: break-word;
+  font-family: Circular,-apple-system,BlinkMacSystemFont,Roboto,Helvetica Neue,sans-serif;
+  font-size: 20px;
+  line-height: 32px;
+  letter-spacing: -0.6px;
+  padding-top: 2px;
+  padding-bottom: 2px;
+  color: #484848;
+  margin-top: 20px;
+}
+
+.review-all {
+  padding-bottom: 30px;
+}
+
+.smile {
+  background-image: image-url("smile.jpg");
+  background-size: 200px;
+}
+
+.face {
+  background-image: image-url("smile.jpg");
+  width: 36px;
+  height: 33px;
+  background-size: 34px;
 }
 
 .past-comment {
   position: absolute;
   left: 400px;
-  top: 210px;
+  top: 470px;
 
+}
+
+.non-profile2 {
+  font-family: "Kozuka Gothic Pro",sans-serif;
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 32px;
+  margin-bottom: 32px;
+  position: absolute;
+  left: 430px;
+  top: 150px;
+}
+
+.non-profile-button {
+  ox-shadow:none;
+  position: absolute;
+  left: 430px;
+  top: 250px;
+  display:block;
+  margin-top:50px;
+  margin-bottom:30px;
+  padding:17px;
+  width:270px;
+  font-size:1.2em;
+  background:#f26964;
+  color:#f4f4f4;
+  box-shadow:0px 3px 0px #ab4b47;
+  cursor:pointer;
+  -webkit-border-radius: 6px;
+     -moz-border-radius: 6px;
+      -ms-border-radius: 6px;
+       -o-border-radius: 6px;
+          border-radius: 6px;
+          -webkit-transition: all .1s ease-in-out;
+             -moz-transition: all .1s ease-in-out;
+                  transition: all .1s ease-in-out;
+
+  outline:none;
 }
 
 .first-comment {
   font-size: 20px;
+  position: absolute;
+  left: 430px;
+  top: 140px;
+  font-family: "Kozuka Gothic Pro",sans-serif;
+  font-weight: 550;
+  line-height: 32px;
 }
 
 .past-comment-individual {
@@ -260,6 +487,12 @@ body {
   text-shadow: none;
 }
 
+.change-own-page1 {
+  position: absolute;
+  left: 400px;
+  top: 150px;
+}
+
 .change-nickname {
   position: absolute;
   left: 400px;
@@ -313,6 +546,98 @@ body {
   top: 35px;
 }
 
+.user-title-edit {
+  position: absolute;
+  left: 450px;
+  top: 110px;
+  width: 60%;
+  font-weight: 700;
+  margin: 0px;
+  word-wrap: break-word;
+  font-family: Circular,-apple-system,BlinkMacSystemFont,Roboto,Helvetica Neue,sans-serif;
+  font-size: 36px;
+  line-height: 40px;
+  letter-spacing: -0.6px;
+  padding-top: 6px;
+  padding-bottom: 6px;
+  color: #484848;
+}
+
+ul.drop-menu {
+ margin: 0px;               /* メニューバー外側の余白(ゼロ) */
+ padding: 0px 0px 0px 15px; /* メニューバー内側の余白(左に15px) */
+  /* バーの背景色(濃い赤色) */
+}
+
+ul.drop-menu a { /* メニュー項目の背景色(濃い赤色) */
+ color: #FF6600;              /* メニュー項目の文字色(白色) */
+ font-weight: bold;
+ display: block;
+}
+
+ul.drop-menu li {
+ font-weight: bold;
+ color: white;
+ list-style-type: none;
+ position: relative;
+}
+
+ul.drop-menu a:hover {
+ background-color: #ffdddd; /* メニュー項目にマウスが載ったときの背景色(淡いピンク) */
+ color: #dd0000;            /* メニュー項目にマウスが載ったときの文字色(濃い赤色) */
+}
+
+ul.drop-menu ul {
+  margin: 0px;
+  padding: 0px;
+  position: absolute;
+}
+
+ul.drop-menu li:hover ul {
+  display: block;
+}
+
+.change-own-page1 {
+  position: absolute;
+  left: 430px;
+  top: 250px;
+}
+
+.nickname-change1 {
+  border-radius: 4px !important;
+  border: 1px solid #DBDBDB !important;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1) !important;
+  // display: table !important;
+  table-layout: fixed !important;
+}
+
+.nickname-change2 {
+  height: 100px;
+  width: 300px;
+  margin-top: 5px;
+  position: relative;
+  left: 0px;
+  border-radius: 4px !important;
+  border: 1px solid #DBDBDB !important;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1) !important;
+  // display: table !important;
+  table-layout: fixed !important;
+}
+
+.change-own-page2 {
+  font-family: "Kozuka Gothic Pro",sans-serif;
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 32px;
+  margin-bottom: 32px;
+}
+
+.change-own-page3 {
+  margin-bottom: 30px;
+  color: #484848;
+}
+
+
 .edit-comment {
   position: absolute;
   left: 400px;
@@ -323,24 +648,65 @@ body {
   font-size: 30px;
 }
 
+.star-rating {
+  position: absolute;
+  left: 500px;
+  top: 280px;
+  font-size: 20px;
+}
+
+.user-title-review {
+  font-weight: 700;
+  margin: 0px;
+  word-wrap: break-word;
+  font-family: Circular,-apple-system,BlinkMacSystemFont,Roboto,Helvetica Neue,sans-serif;
+  font-size: 36px;
+  line-height: 40px;
+  letter-spacing: -0.6px;
+  padding-top: 6px;
+  padding-bottom: 6px;
+  color: #484848;
+  position: absolute;
+  left: 380px;
+  top: 50px;
+}
+
+.user-show-receive {
+  position: absolute;
+  left: 400px;
+  top: 30px;
+  font-weight: 700;
+  margin: 0px;
+  word-wrap: break-word;
+  font-family: Circular,-apple-system,BlinkMacSystemFont,Roboto,Helvetica Neue,sans-serif;
+  font-size: 36px;
+  line-height: 40px;
+  letter-spacing: -0.6px;
+  padding-top: 6px;
+  padding-bottom: 6px;
+  color: #484848;
+}
+
+
+.footer {
+  position: absolute;
+  bottom: 0px;
+  right: 50px;
+  font-size: 12px;
+}
+
 @media screen and ( max-width:479px )
 {
   body {
     background-color: #FFCC99;
   }
 
-  .user-title {
-    position: absolute;
-    left: 20px;
-    font-family: Lato, "Noto Sans JP", "游ゴシック Medium", "游ゴシック体", "Yu Gothic Medium", YuGothic, "ヒラギノ角ゴ ProN", "Hiragino Kaku Gothic ProN", "メイリオ", Meiryo, "ＭＳ Ｐゴシック", "MS PGothic", sans-serif;
-    font-size: 35px;
-    font-style: italic;
-  }
-
   .user-title1 {
     position: absolute;
     left: 20px;
     top: 115px;
+    color: #484848;
+    font-weight: 600;
   }
 
   .user-list {
@@ -394,6 +760,11 @@ body {
     height: 33px;
     font-size: 15px;
     background-color: #FFEBCD;
+    border-radius: 4px !important;
+    border: 1px solid #DBDBDB !important;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1) !important;
+    // display: table !important;
+    table-layout: fixed !important;
   }
 
   .actions {
@@ -405,20 +776,41 @@ body {
     position: absolute;
     left: 10px;
     top: 25px;
-    font-family: Lato, "Noto Sans JP", "游ゴシック Medium", "游ゴシック体", "Yu Gothic Medium", YuGothic, "ヒラギノ角ゴ ProN", "Hiragino Kaku Gothic ProN", "メイリオ", Meiryo, "ＭＳ Ｐゴシック", "MS PGothic", sans-serif;
-    font-size: 30px;
-    font-style: italic;
+  }
+
+  .user-show-review {
+    position: absolute;
+    left: 10px;
+    top: 80px;
+  }
+
+  .review-box {
+
   }
 
   .past-comment {
     position: absolute;
     left: 10px;
-    top: 150px;
+    top: 400px;
 
+  }
+
+  .non-profile2 {
+    position: absolute;
+    left: 10px;
+    top: 120px;
+  }
+
+  .non-profile-button {
+    position: absolute;
+    left: 10px;
+    top: 290px;
   }
 
   .first-comment {
     font-size: 15px;
+    position: absolute;
+    left: 10px;
   }
 
   .past-comment-individual {
@@ -444,9 +836,6 @@ body {
     position: absolute;
     left: 90px;
     top: 30px;
-    font-family: Lato, "Noto Sans JP", "游ゴシック Medium", "游ゴシック体", "Yu Gothic Medium", YuGothic, "ヒラギノ角ゴ ProN", "Hiragino Kaku Gothic ProN", "メイリオ", Meiryo, "ＭＳ Ｐゴシック", "MS PGothic", sans-serif;
-    font-size: 40px;
-    font-style: italic;
   }
 
   .explanation {
@@ -480,8 +869,9 @@ body {
 
   .user-title {
     position: absolute;
-    left: 20px;
-    top: 50px;
+    left: 90px;
+    top: 40px;
+    width: 60%;
   }
 
   .change-nickname {
@@ -519,4 +909,100 @@ body {
   .edit-comment-1 {
     font-size: 20px;
   }
+
+  .user-title-edit {
+    position: absolute;
+    left: 80px;
+    top: 110px;
+    width: 60%;
+    font-weight: 700;
+    margin: 0px;
+    word-wrap: break-word;
+    font-family: Circular,-apple-system,BlinkMacSystemFont,Roboto,Helvetica Neue,sans-serif;
+    font-size: 36px;
+    line-height: 40px;
+    letter-spacing: -0.6px;
+    padding-top: 6px;
+    padding-bottom: 6px;
+    color: #484848;
+  }
+
+  ul.drop-menu {
+   margin: 0px;               /* メニューバー外側の余白(ゼロ) */
+   padding: 0px 0px 0px 15px; /* メニューバー内側の余白(左に15px) */
+    /* バーの背景色(濃い赤色) */
+  }
+
+  ul.drop-menu a { /* メニュー項目の背景色(濃い赤色) */
+   color: #FF6600;              /* メニュー項目の文字色(白色) */
+   font-weight: bold;
+   display: block;
+  }
+
+  ul.drop-menu li {
+   font-weight: bold;
+   color: white;
+   list-style-type: none;
+   position: relative;
+  }
+
+  ul.drop-menu a:hover {
+   background-color: #ffdddd; /* メニュー項目にマウスが載ったときの背景色(淡いピンク) */
+   color: #dd0000;            /* メニュー項目にマウスが載ったときの文字色(濃い赤色) */
+  }
+
+  ul.drop-menu ul {
+    margin: 0px;
+    padding: 0px;
+    position: absolute;
+  }
+
+  ul.drop-menu li:hover ul {
+    display: block;
+  }
+
+  .change-own-page1 {
+    position: absolute;
+    left: 20px;
+    top: 250px;
+  }
+
+  .nickname-change1 {
+    border-radius: 4px !important;
+    border: 1px solid #DBDBDB !important;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1) !important;
+    // display: table !important;
+    table-layout: fixed !important;
+  }
+
+  .nickname-change2 {
+    height: 100px;
+    width: 300px;
+    margin-top: 5px;
+    position: relative;
+    left: 0px;
+    border-radius: 4px !important;
+    border: 1px solid #DBDBDB !important;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1) !important;
+    // display: table !important;
+    table-layout: fixed !important;
+  }
+
+  .change-own-page2 {
+    font-family: "Kozuka Gothic Pro",sans-serif;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 32px;
+    margin-bottom: 32px;
+  }
+
+  .change-own-page3 {
+    margin-bottom: 30px;
+    color: #484848;
+  }
+
+  .introduction1 {
+    margin-top: 30px;
+  }
+
 }

@@ -1,0 +1,37 @@
+<head>
+  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+</head>
+<body>
+  <!-- <%= render partial: 'shared/header' %> -->
+  <ul class="drop-menu">
+    <li>
+      <ul>
+        <li>
+          <a href="#"><%= link_to 'トップページへ', root_path, class:'toppage2' %></a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+
+  <div class="follow1">
+    <div class="follow2">
+      <div class="follow3">
+        友達をフォローしてみましょう
+      </div>
+      <div class="check-box" >
+        <%= form_for @follow do |f| %>
+          <%= f.collection_check_boxes(:user_ids, @users, :id, :nickname) do |b| %>
+            <%= b.label { b.check_box + b.text } %>
+          <% end %>
+      </div>
+      <div class="check-box-button">
+        <%= f.submit 'フォローする', :class=>"nickname-btn" %>
+      </div>
+      <% end %>
+    </div>
+  </div>
+
+
+
+</body>

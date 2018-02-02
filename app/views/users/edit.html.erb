@@ -14,7 +14,10 @@
           <%= link_to 'あなた宛のレビューと手紙を読む', receife_path(current_user.id), method: :get %>
         </li>
         <li>
-          <%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class:'logout2' %>
+          <%= link_to '友達をフォローする', edit_follow_path(current_user.id), method: :get %>
+        </li>
+        <li>
+          <%= link_to 'アカウント情報の変更', edit_profile_path(current_user.id), method: :get %>
         </li>
       </ul>
     </li>
@@ -28,23 +31,27 @@
     <div class="change-own-page2">
       まずはみんなにレビューしてほしい項目を５つ登録しましょう！
     </div>
+
     <%= form_for(current_user) do |f| %>
     <div class="change-own-page3">
-      1<%= f.text_field :ratename1, :placeholder => "たとえば：優しさ", :class => 'nickname-change1' %>
+      1<%= f.text_field :ratename1, :placeholder => "たとえば：優しさ (10文字以内)", :class => 'nickname-change1' %>
     </div>
     <div class="change-own-page3">
-      2<%= f.text_field :ratename2, :placeholder => "たとえば：ピュア", :class => 'nickname-change1' %>
+      2<%= f.text_field :ratename2, :placeholder => "たとえば：ピュア (10文字以内)", :class => 'nickname-change1' %>
     </div>
     <div class="change-own-page3">
-      3<%= f.text_field :ratename3, :placeholder => "たとえば：包容力", :class => 'nickname-change1' %>
+      3<%= f.text_field :ratename3, :placeholder => "たとえば：包容力 (10文字以内)", :class => 'nickname-change1' %>
     </div>
     <div class="change-own-page3">
-      4<%= f.text_field :ratename4, :placeholder => "ご自由にどうぞ笑", :class => 'nickname-change1' %>
+      4<%= f.text_field :ratename4, :placeholder => "ご自由にどうぞ笑 (10文字以内)", :class => 'nickname-change1' %>
     </div>
     <div class="change-own-page3">
-      5<%= f.text_field :ratename5, :placeholder => "ご自由にどうぞ笑", :class => 'nickname-change1' %>
+      5<%= f.text_field :ratename5, :placeholder => "ご自由にどうぞ笑 (10文字以内)", :class => 'nickname-change1' %>
     </div>
-
+    <div class="change-own-page12">
+      <i class="fa fa-check-square-o" aria-hidden="true"></i>
+      レビューは何度でも更新できます！（更新すると、前にもらったレビューの平均値はリセットされます）
+    </div>
     <div class="introduction1">
       <span>
         <i class="fa fa-pencil-square-o" aria-hidden="true"></i>

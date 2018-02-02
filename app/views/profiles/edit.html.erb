@@ -1,0 +1,49 @@
+<head>
+  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+</head>
+<body>
+  <!-- <%= render partial: 'shared/header' %> -->
+  <ul class="drop-menu">
+    <li>
+      <ul>
+        <li>
+          <a href="#"><%= link_to 'トップページへ', root_path, class:'toppage2' %></a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+
+  <div class="change-profile1">
+    <div class="change-profile2">
+      <div class="change-profile3">
+        アカウント情報の変更
+      </div>
+    </div>
+    <%= form_for(current_user, url: { controller: :profiles, action: :update}) do |f| %>
+    <div class="change-profile4">
+      <div class="change-profile5">
+        <div class="change-own-page3">
+          <%= f.label :ニックネーム %>
+          <%= f.text_field :nickname, class: 'nickname-change1' %>
+        </div>
+
+        <div class="change-own-page3">
+          <%= f.label :メールアドレス %>
+          <%= f.email_field :email, class: 'nickname-change1' %>
+        </div>
+      </div>
+
+      <div class="change-profile6">
+        <%= f.submit '変更する', :class=>"nickname-btn" %>
+      </div>
+    </div>
+    <% end %>
+
+
+  </div>
+
+
+
+
+</body>

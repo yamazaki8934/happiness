@@ -10,6 +10,7 @@ class UsersController < ApplicationController
   def show
     @user = User.find(params[:id])
     if @user.ratename1.blank? || @user.messages.blank?
+    elsif @user.messages.first.rate1.blank?
     else
       @counts = Message.where(user_id: params[:id]).count
       @rate1 = Message.where(user_id: params[:id]).average(:rate1).round(2)
@@ -21,7 +22,13 @@ class UsersController < ApplicationController
   end
 
   def update
+    @rate = Message.where(user_id: current_user.id)
     if current_user.update(user_params)
+      @rate.update(rate1: nil)
+      @rate.update(rate2: nil)
+      @rate.update(rate3: nil)
+      @rate.update(rate4: nil)
+      @rate.update(rate5: nil)
       redirect_to root_path, notice: 'プロフィールの登録に成功しました！'
     else
       flash.now[:notice] = '更新に失敗しました'

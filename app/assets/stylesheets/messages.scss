@@ -277,17 +277,17 @@ body {
   padding-bottom: 30px;
 }
 
-.smile {
-  background-image: image-url("smile.jpg");
-  background-size: 200px;
-}
+// .smile {
+//   background-image: image-url("smile.jpg");
+//   background-size: 200px;
+// }
 
-.face {
-  background-image: image-url("smile.jpg");
-  width: 36px;
-  height: 33px;
-  background-size: 34px;
-}
+// .face {
+//   background-image: image-url("smile.jpg");
+//   width: 36px;
+//   height: 33px;
+//   background-size: 34px;
+// }
 
 .past-comment {
   position: absolute;
@@ -687,6 +687,42 @@ ul.drop-menu li:hover ul {
   color: #484848;
 }
 
+.change-profile1 {
+  position: absolute;
+  left: 550px;
+  top: 30px;
+  width: 400px;
+}
+
+.change-profile3 {
+  font-weight: 700;
+  margin: 0px;
+  word-wrap: break-word;
+  font-family: Circular,-apple-system,BlinkMacSystemFont,Roboto,Helvetica Neue,sans-serif;
+  font-size: 20px;
+  line-height: 32px;
+  letter-spacing: -0.6px;
+  padding-top: 2px;
+  padding-bottom: 2px;
+  color: #484848;
+  margin-top: 20px;
+}
+
+.follow1 {
+  position: absolute;
+  left: 300px;
+  top: 80px;
+}
+
+.follow3 {
+  color: #999;
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 18px;
+  margin-bottom: 16px;
+  text-align: left;
+  text-transform: capitalize;
+}
 
 .footer {
   position: absolute;
@@ -781,7 +817,7 @@ ul.drop-menu li:hover ul {
   .user-show-review {
     position: absolute;
     left: 10px;
-    top: 80px;
+    top: 110px;
   }
 
   .review-box {
@@ -913,7 +949,7 @@ ul.drop-menu li:hover ul {
   .user-title-edit {
     position: absolute;
     left: 80px;
-    top: 110px;
+    top: 140px;
     width: 60%;
     font-weight: 700;
     margin: 0px;
@@ -964,7 +1000,7 @@ ul.drop-menu li:hover ul {
   .change-own-page1 {
     position: absolute;
     left: 20px;
-    top: 250px;
+    margin-top: 47px;
   }
 
   .nickname-change1 {
@@ -1005,4 +1041,19 @@ ul.drop-menu li:hover ul {
     margin-top: 30px;
   }
 
+  .change-profile1 {
+    position: absolute;
+    left: 10px;
+    top: 60px;
+  }
+
+  .change-profile5 {
+    margin-top: 30px;
+  }
+
+  .change-profile6 {
+    position: absolute;
+    left: 0px;
+    top: 190px;
+  }
 }

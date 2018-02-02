@@ -13,4 +13,6 @@ Rails.application.routes.draw do
     resources :messages
     resources :sents
   end
+  resources :follows
+  resources :profiles, only: [:edit, :update]
 end

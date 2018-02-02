@@ -9,12 +9,6 @@
         <li>
           <a href="#"><%= link_to 'トップページへ', root_path, class:'toppage2' %></a>
         </li>
-        <li>
-          <%= link_to 'あなた宛のレビューと手紙を読む', receife_path(current_user.id), method: :get %>
-        </li>
-        <li>
-          <%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class:'logout2' %>
-        </li>
       </ul>
     </li>
   </ul>
@@ -107,6 +101,7 @@
     <div class="past-comment">
 
       <div class="past-review">
+        <i class="fa fa-envelope-o" aria-hidden="true"></i>
         あなたへの全ての手紙
       </div>
         <% @user.messages.each do |message| %>
@@ -119,17 +114,17 @@
           </div>
           <% if message.like_user(current_user.id) %>
             <%= button_to message_likes_path(like, message_id: message.id), method: :delete, id: "like-buttons", remote: true do %>
-              <div class="smile">
+              <!-- <div class="smile">
 
-              </div>
+              </div> -->
               <span>
                 <%= message.like_count %>
               </span>
             <% end %>
           <% else %>
             <%= button_to message_like_path(message.id), id: "like-button", remote: true do %>
-              <div class="face">
-              </div>
+              <!-- <div class="face">
+              </div> -->
               <span>
                 <%= message.likes_count %>
               </span>

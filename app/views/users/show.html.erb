@@ -94,6 +94,7 @@
   <div class="past-comment">
 
     <div class="past-review">
+      <i class="fa fa-envelope-o" aria-hidden="true"></i>
       <%= @user.nickname %>さんへの全ての手紙
     </div>
       <% @user.messages.each do |message| %>
@@ -106,9 +107,9 @@
         </div>
         <% if message.like_user(current_user.id) %>
           <%= button_to message_likes_path(like, message_id: message.id), method: :delete, id: "like-buttons", remote: true do %>
-            <div class="smile">
-
-            </div>
+            <!-- <div class="envelope">
+              <i class="fa fa-envelope-o" aria-hidden="true"></i>
+            </div> -->
             <span>
               <%= message.like_count %>
             </span>

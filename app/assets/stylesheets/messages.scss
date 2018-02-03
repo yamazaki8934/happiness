@@ -45,6 +45,25 @@ body {
   top: 160px;
 }
 
+.follow-list {
+  position: absolute;
+  left: 490px;
+  top: 250px;
+}
+
+.follow-list1 {
+  font-weight: 700;
+  margin: 0px;
+  word-wrap: break-word;
+  font-family: Circular,-apple-system,BlinkMacSystemFont,Roboto,Helvetica Neue,sans-serif;
+  font-size: 25px;
+  line-height: 40px;
+  letter-spacing: -0.6px;
+  padding-top: 6px;
+  padding-bottom: 6px;
+  color: #484848;
+}
+
 .user-list {
   position: absolute;
   left: 510px;
@@ -715,13 +734,37 @@ ul.drop-menu li:hover ul {
 }
 
 .follow3 {
-  color: #999;
-  font-size: 24px;
-  font-weight: 600;
-  line-height: 18px;
-  margin-bottom: 16px;
-  text-align: left;
-  text-transform: capitalize;
+  font-weight: 700;
+  margin: 0px;
+  word-wrap: break-word;
+  font-family: Circular,-apple-system,BlinkMacSystemFont,Roboto,Helvetica Neue,sans-serif;
+  font-size: 25px;
+  line-height: 40px;
+  letter-spacing: -0.6px;
+  padding-top: 6px;
+  padding-bottom: 6px;
+  color: #484848;
+}
+
+.butterfly {
+  background-image: image-url("butterfly1.jpg");
+  width: 300px;
+  height: 165px;
+  background-size: 263px;
+  position: absolute;
+  top: 100px;
+  left: 50px;
+}
+
+.user-show-review-receive {
+  position: absolute;
+  left: 460px;
+}
+
+.past-comment-receive {
+  position: absolute;
+  left: 460px;
+  top: 330px;
 }
 
 .footer {
@@ -753,6 +796,12 @@ ul.drop-menu li:hover ul {
 
   .user-list1 {
     font-size: 30px;
+    position: absolute;
+    left: 10px;
+  }
+
+  .user-list2 {
+    font-size: 22px;
   }
 
   .character {
@@ -817,7 +866,58 @@ ul.drop-menu li:hover ul {
   .user-show-review {
     position: absolute;
     left: 10px;
-    top: 110px;
+    top: 340px;
+  }
+
+  .user-show-review-receive {
+    position: absolute;
+    left: 10px;
+    top: 250px;
+  }
+
+  .sorry2 {
+    background-image: image-url("sorry.jpg");
+    position: absolute;
+    left: 40px;
+    top: 350px;
+    background-size: 280px;
+    width: 300px;
+    height: 180px;
+  }
+
+  .face-down2 {
+    background-image: image-url("face-down.jpg");
+    position: absolute;
+    left: 10px;
+    top: 430px;
+    background-size: 280px;
+    width: 300px;
+    height: 180px;
+  }
+
+  .heart1 {
+    background-image: image-url("heart.jpg");
+    background-size: 280px;
+    width: 300px;
+    height: 195px;
+    position: absolute;
+    top: 150px;
+  }
+
+  .butterfly {
+    background-image: image-url("butterfly1.jpg");
+    width: 300px;
+    height: 165px;
+    background-size: 263px;
+    position: absolute;
+    top: 60px;
+    left: 50px;
+
+  }
+
+  .butterfly1 {
+    font-family:"Lucida Grande", "segoe UI", "ヒラギノ丸ゴ ProN W4", "Hiragino Maru Gothic ProN", Meiryo, Arial, sans-serif;
+    margin: 12px;
   }
 
   .review-box {
@@ -827,8 +927,14 @@ ul.drop-menu li:hover ul {
   .past-comment {
     position: absolute;
     left: 10px;
-    top: 400px;
+    top: 660px;
 
+  }
+
+  .past-comment-receive {
+    position: absolute;
+    left: 10px;
+    top: 580px;
   }
 
   .non-profile2 {
@@ -1055,5 +1161,28 @@ ul.drop-menu li:hover ul {
     position: absolute;
     left: 0px;
     top: 190px;
+  }
+
+  .follow1 {
+    position: absolute;
+    left: 20px;
+  }
+
+  .shine2 {
+    background-image: image-url("shine.jpg");
+    background-size: 280px;
+    width: 300px;
+    height: 230px;
+    margin-top: 30px;
+    margin-left: 28px;
+  }
+
+  .check-box {
+    font-size: 18px;
+    margin-top: 30px;
+  }
+
+  .check-box-button {
+    margin-top: 25px;
   }
 }

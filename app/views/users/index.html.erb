@@ -30,7 +30,33 @@
 
   </ul> -->
 
-  <div class="user-list">
+	<div class="user-list">
+		<div class="follow-list1">
+			フォローしている友達
+		</div>
+		<div class="user-list1">
+			<% if @follow.blank? %>
+			<div class="user-list2">
+			  <p>
+			    フォローしている友達はいません
+				</p>
+				<p>
+          マイページから友達をフォローしてみましょう！
+				</p>
+			</div>
+			<% else %>
+			<% @follows.each do |follow| %>
+			<p>
+				<%= link_to user_path(follow.id) do %>
+					<%= follow.nickname %>さん
+				<% end %>
+			</p>
+			<% end %>
+			<% end %>
+		</div>
+	</div>
+
+  <!-- <div class="user-list">
     <div class="user-list1">
       <% @users.each do |user| %>
       <% if current_user.id != user.id %>
@@ -42,8 +68,9 @@
       <% end %>
       <% end %>
     </div>
-  </div>
 
-	
+  </div> -->
+
+
 
 </body>

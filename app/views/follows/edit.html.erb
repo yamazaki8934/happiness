@@ -17,9 +17,13 @@
   <div class="follow1">
     <div class="follow2">
       <div class="follow3">
-        友達をフォローしてみましょう
+        友達をフォローしてみましょう！
       </div>
-      <div class="check-box" >
+      <div class="shine1">
+        <div class="shine2">
+        </div>
+      </div>
+      <div class="check-box">
         <%= form_for @follow do |f| %>
           <%= f.collection_check_boxes(:user_ids, @users, :id, :nickname) do |b| %>
             <%= b.label { b.check_box + b.text } %>

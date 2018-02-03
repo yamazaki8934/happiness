@@ -10,7 +10,7 @@ class FollowsController < ApplicationController
 
   def edit
     @follow = Follow.new
-    @users = User.all
+    @users = User.where.not(id: current_user.id).order(current_sign_in_at: :desc)
   end
 
   def update

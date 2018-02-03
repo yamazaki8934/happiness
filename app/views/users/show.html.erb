@@ -13,8 +13,9 @@
       <p><%= @user.nickname %>さんはまだプロフィールを設定していません</p>
       <p><%= @user.nickname %>さんのプロフィール設定を待ちましょう！</p>
     </div>
-    <div class="non-profile-button">
-      <%= link_to "トップページへ戻る", root_path %>
+    <div class="sorry1">
+      <div class="sorry2">
+      </div>
     </div>
   </div>
   <% elsif @user.messages.blank? %>
@@ -25,7 +26,15 @@
       <%= link_to "最初のレビューを届ける", new_user_message_path(@user.id) %>
     </div>
   </div>
+  <div class="face-down1">
+    <div class="face-down2">
+    </div>
+  </div>
   <% else %>
+  <div class="heart1">
+    <div class="heart2">
+    </div>
+  </div>
   <div class="user-show-review">
     <div class="review-box">
       <div class="user-show-review1">
@@ -103,27 +112,9 @@
           <%= message.body1 %>
         </div>
         <div class="review-all2">
-          <%= message.created_at.strftime("%Y年%m月%d日 %H時%M分") %>
+          <%= message.created_at.strftime("%Y年%m月%d日") %>
         </div>
-        <% if message.like_user(current_user.id) %>
-          <%= button_to message_likes_path(like, message_id: message.id), method: :delete, id: "like-buttons", remote: true do %>
-            <!-- <div class="envelope">
-              <i class="fa fa-envelope-o" aria-hidden="true"></i>
-            </div> -->
-            <span>
-              <%= message.like_count %>
-            </span>
-          <% end %>
-        <% else %>
-          <%= button_to message_like_path(message.id), id: "like-button", remote: true do %>
-            <div class="face">
-            </div>
-            <span>
-              <%= message.likes_count %>
-            </span>
-          <% end %>
-        <% end %>
-        </div>
+      </div>
       <% end %>
       <div class="users-show-button">
         <%= link_to "あなたもレビューを届ける", new_user_message_path(@user.id) %>

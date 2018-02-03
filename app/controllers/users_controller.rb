@@ -1,6 +1,11 @@
 class UsersController < ApplicationController
   def index
     @users = User.all
+    @follow = Follow.where(user_id: current_user.id)
+    if @follow.blank?
+    else
+    @follows = @follow.last.users
+    end
   end
 
   def edit
@@ -10,7 +15,7 @@ class UsersController < ApplicationController
   def show
     @user = User.find(params[:id])
     if @user.ratename1.blank? || @user.messages.blank?
-    elsif @user.messages.first.rate1.blank?
+    elsif @user.messages.last.rate1.blank?
     else
       @counts = Message.where(user_id: params[:id]).count
       @rate1 = Message.where(user_id: params[:id]).average(:rate1).round(2)

@@ -33,7 +33,12 @@
       </div>
     </div>
     <% else %>
-    <div class="user-show-review">
+    <div class="butterfly">
+      <div class="butterfly1">
+        あなたへのレビューのぺーじだよ〜
+      </div>
+    </div>
+    <div class="user-show-review-receive">
       <div class="review-box">
         <div class="user-show-review1">
           あなたへのレビュー　<%= @counts %>件
@@ -98,7 +103,7 @@
       </div>
     </div>
 
-    <div class="past-comment">
+    <div class="past-comment-receive">
 
       <div class="past-review">
         <i class="fa fa-envelope-o" aria-hidden="true"></i>
@@ -110,27 +115,9 @@
             <%= message.body1 %>
           </div>
           <div class="review-all2">
-            <%= message.created_at.strftime("%Y年%m月%d日 %H時%M分") %>
+            <%= message.created_at.strftime("%Y年%m月%d日") %>
           </div>
-          <% if message.like_user(current_user.id) %>
-            <%= button_to message_likes_path(like, message_id: message.id), method: :delete, id: "like-buttons", remote: true do %>
-              <!-- <div class="smile">
-
-              </div> -->
-              <span>
-                <%= message.like_count %>
-              </span>
-            <% end %>
-          <% else %>
-            <%= button_to message_like_path(message.id), id: "like-button", remote: true do %>
-              <!-- <div class="face">
-              </div> -->
-              <span>
-                <%= message.likes_count %>
-              </span>
-            <% end %>
-          <% end %>
-          </div>
+        </div>
         <% end %>
       <% end %>
 

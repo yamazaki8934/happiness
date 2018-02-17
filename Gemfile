@@ -66,5 +66,3 @@ gem 'devise'
 gem 'pry-rails'
 
 gem 'public_activity'
-
-gem 'lazy_high_charts'

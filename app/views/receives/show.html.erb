@@ -17,27 +17,28 @@
     <% if current_user.ratename1.blank? %>
     <div class="non-profile1">
       <div class="non-profile2">
-        <p>まだプロフィールが設定されていません</p>
-        <p>さっそくプロフィールを設定してみんなからのレビューをもらいましょう！</p>
+        <p>まだレビュー項目が設定されていません</p>
+        <p>さっそくレビュー項目を設定してみんなからのレビューをもらいましょう！</p>
       </div>
       <div class="non-profile-button">
-        <%= link_to "プロフィールを設定する", edit_user_path %>
+        <%= link_to "レビュー項目を設定する", edit_user_path %>
       </div>
     </div>
     <% elsif current_user.messages.blank? %>
     <div class="first-comment">
       <p>あなたへのレビューはまだありません</p>
       <P>みんなからのレビューを待ちましょう！</P>
-      <div class="users-show-button">
+
+      <!-- <div class="users-show-button">
         <%= link_to "トップページへ戻る", root_path %>
+      </div> -->
+    </div>
+    <div class="sorry1">
+      <div class="sorry2">
       </div>
     </div>
     <% else %>
-    <div class="butterfly">
-      <div class="butterfly1">
-        あなたへのレビューのぺーじだよ〜
-      </div>
-    </div>
+
     <div class="user-show-review-receive">
       <div class="review-box">
         <div class="user-show-review1">
@@ -109,7 +110,7 @@
         <i class="fa fa-envelope-o" aria-hidden="true"></i>
         あなたへの全ての手紙
       </div>
-        <% @user.messages.each do |message| %>
+        <% @user.messages.order(created_at: :desc).each do |message| %>
         <div class="review-all">
           <div class="review-all1">
             <%= message.body1 %>

@@ -9,7 +9,8 @@ class MessagesController < ApplicationController
     @user = User.find(session[:user_id])
     @message = Message.new(message_params)
     @message.save
-    redirect_to users_path, notice: '届けました！'
+    
+    redirect_to root_path, notice: '届けました！'
   end
 
   private

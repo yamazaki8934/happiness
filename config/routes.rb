@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
-  root 'users#index'
   devise_for :users
+  resources :toppage, only: [:index]
   resources :users do
     collection do
       resources :receives
@@ -15,4 +15,5 @@ Rails.application.routes.draw do
   end
   resources :follows
   resources :profiles, only: [:edit, :update]
+  root 'toppage#index'
 end

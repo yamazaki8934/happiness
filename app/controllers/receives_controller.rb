@@ -1,7 +1,8 @@
 class ReceivesController < ApplicationController
   def show
     @user = User.find(current_user.id)
-    if current_user.ratename1.blank? || @user.messages.last.rate1.blank?
+    if current_user.ratename1.blank? || @user.messages.last.blank?
+    elsif @user.messages.last.rate1.blank?
     else
       @counts = Message.where(user_id: current_user.id).count
       @rate1 = Message.where(user_id: current_user.id).average(:rate1).round(2)

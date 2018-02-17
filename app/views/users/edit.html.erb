@@ -3,8 +3,8 @@
   <meta name="viewport" content="width=device-width,initial-scale=1">
 </head>
 <body>
-  <!-- <%= render partial: 'shared/header' %> -->
-  <ul class="drop-menu">
+  <%= render partial: 'shared/header' %>
+  <!-- <ul class="drop-menu">
     <li>
       <ul>
         <li>
@@ -14,18 +14,15 @@
           <%= link_to 'あなた宛のレビューと手紙を読む', receife_path(current_user.id), method: :get %>
         </li>
         <li>
-          <%= link_to '友達をフォローする', edit_follow_path(current_user.id), method: :get %>
-        </li>
-        <li>
           <%= link_to 'アカウント情報の変更', edit_profile_path(current_user.id), method: :get %>
         </li>
       </ul>
     </li>
-  </ul>
+  </ul> -->
 
-  <div class="user-title-edit">
+  <!-- <div class="user-title-edit">
     <%= current_user.nickname %>さん、こんにちは！
-  </div>
+  </div> -->
 
   <div class="change-own-page1">
     <div class="change-own-page2">

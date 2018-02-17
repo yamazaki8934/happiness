@@ -1,11 +1,11 @@
 class UsersController < ApplicationController
+  def toppage
+    @recommends = User.where.not(id: current_user.id).order(current_sign_in_at: :desc).limit(5)
+  end
+
   def index
     @users = User.all
-    @follow = Follow.where(user_id: current_user.id)
-    if @follow.blank?
-    else
-    @follows = @follow.last.users
-    end
+    @recommends = User.where.not(id: current_user.id).order(updated_at: :desc).limit(5)
   end
 
   def edit
@@ -23,6 +23,8 @@ class UsersController < ApplicationController
       @rate3 = Message.where(user_id: params[:id]).average(:rate3).round(2)
       @rate4 = Message.where(user_id: params[:id]).average(:rate4).round(2)
       @rate5 = Message.where(user_id: params[:id]).average(:rate5).round(2)
+
+
     end
   end
 
@@ -34,7 +36,8 @@ class UsersController < ApplicationController
       @rate.update(rate3: nil)
       @rate.update(rate4: nil)
       @rate.update(rate5: nil)
-      redirect_to root_path, notice: 'プロフィールの登録に成功しました！'
+
+      redirect_to root_path, notice: '項目の登録に成功しました！'
     else
       flash.now[:notice] = '更新に失敗しました'
       render :edit

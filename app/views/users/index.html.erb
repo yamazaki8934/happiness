@@ -4,33 +4,30 @@
 </head>
 
 <body>
-  <div class="user-title">
-    <p>Happiness</p>
-  </div>
+  <%= render partial: 'shared/header' %>
 
-  <div class="user-title1">
-    <p>〜心の温まるレビュー届けてみませんか？〜</p>
-  </div>
+	<div class="recommend">
+		<div class="recommend1">
+      <p class="recommend2">最近更新したユーザー</p>
+		</div>
+    <div class="recommend3">
+      <% @recommends.each do |recommend| %>
+			<p class="recommend4">
+				<%= link_to user_path(recommend.id), style: 'text-decoration: none;' do %>
+					<%= recommend.nickname %>さん
+				<% end %>
+			</p>
+			<% end %>
+		</div>
+	</div>
 
-  <div class="my-account">
-    <%= link_to 'マイページ', edit_user_path(current_user.id), method: :get, class:'mypage' %>
-  </div>
-
-  <div class="logout">
-    <%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class:'logout1' %>
-  </div>
-
-  <div class="character">
-    <div class="character1">
-    </div>
-  </div>
 
 	<!-- <input type=form id="form" placeholder="ユーザー名を入力してください" style="width: 250px;"/>
 	<ul id="result">
 
   </ul> -->
 
-	<div class="user-list">
+	<!-- <div class="user-list">
 		<div class="follow-list1">
 			フォローしている友達
 		</div>
@@ -54,14 +51,17 @@
 			<% end %>
 			<% end %>
 		</div>
-	</div>
+	</div> -->
 
-  <!-- <div class="user-list">
+  <div class="user-list">
+		<div class="user-all">
+      <p class="recommend2">全てのユーザー</p>
+		</div>
     <div class="user-list1">
       <% @users.each do |user| %>
       <% if current_user.id != user.id %>
-      <p>
-        <%= link_to user_path(user.id) do %>
+      <p class="recommend4">
+        <%= link_to user_path(user.id), style: 'text-decoration: none;' do %>
           <%= user.nickname %>さん
         <% end %>
       </p>
@@ -69,7 +69,7 @@
       <% end %>
     </div>
 
-  </div> -->
+  </div>
 
 
 

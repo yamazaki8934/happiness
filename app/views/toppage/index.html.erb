@@ -1,0 +1,104 @@
+<head>
+	<!-- ビューポートの設定 -->
+	<meta name="viewport" content="width=device-width,initial-scale=1">
+	<script src="https://code.jquery.com/jquery-3.2.1.min.js" type="text/javascript"></script>
+</head>
+
+<body>
+  <header>
+		<div class="container">
+			<span class="fa fa-bars fa-2x menu-icon" id="bar">
+			  <div class="header-right">
+					<i class="fa fa-times-circle x-mark" id="mark"></i>
+					<ul class="header-right1">
+						<li class="my-account">
+		          <%= link_to 'あなた宛のレビュー', receife_path(current_user.id), method: :get, class:'logout1', style:'color: black;' %>
+		        </li>
+						<li class="my-account">
+		          <%= link_to 'アカウント情報の変更', edit_profile_path(current_user.id), method: :get, class:'logout1', style:'color: black;' %>
+		        </li>
+					  <li class="my-account">
+					    <%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class:'logout1', style:'color: black;' %>
+					  </li>
+					</ul>
+				</div>
+			</span>
+			<!-- <span class="fa fa-bell fa-2x bell-icon" id="bell">
+			  <div class="header-another">
+					<% @activities.each do |activity| %>
+					  <%= link_to activity.owner.nickname, activity.owner if activity.owner -%>
+					  <%= link_to activity.trackable.nickname, activity.trackable -%>
+          <% end %>
+				</div>
+			</span> -->
+	  </div>
+	</header>
+
+  <div class="user-title-toppage" id="title">
+    <span class="English">Happiness</span><span class="Japanese0">へ</span>
+    <p class="Japanese">ようこそ！</p>
+  </div>
+
+  <div class="choose" id="button">
+		<div class="choose-left">
+			<div class="choose-button">
+        <%= link_to "レビューを送る", users_path, class:'choose-button10', style:'color: white;' %>
+      </div>
+		</div>
+		<div class="choose-right">
+      <div class="choose-button">
+        <%= link_to "レビューをもらう", edit_user_path(current_user.id), class:'choose-button1', style:'color: white;' %>
+      </div>
+		</div>
+	</div>
+
+	<div class="toppage-recommend">
+		<div class="recommend1">
+      <p class="recommend2">おすすめのユーザー</p>
+		</div>
+    <div class="recommend3">
+      <% @recommends.each do |recommend| %>
+			<p class="recommend4">
+				<%= link_to user_path(recommend.id), style: 'text-decoration: none;', class: 'recommend5' do %>
+					<%= recommend.nickname %>さん
+				<% end %>
+			</p>
+			<% end %>
+		</div>
+	</div>
+
+	<div class="history">
+    <div class="recommend1">
+      <p class="recommend2">あなたがレビューを送ったユーザー</p>
+		</div>
+		<div class="recommend3">
+			<% @histories.each do |history| %>
+			<p class="recommend4">
+				<%= link_to user_path(history.id), style: 'text-decoration: none;' do %>
+					<%= history.nickname %>さん
+				<% end %>
+			</p>
+			<% end %>
+		</div>
+	</div>
+
+	<script type="text/javascript">
+   $(function(){
+      // ▼マウスが載ったらサブメニューを表示
+      $("#bar").mouseenter(function(){
+				 $("#title").hide();
+         $("#button").hide();
+         $(this).find(".header-right").fadeIn();     // 自分のサブメニューを表示する。
+      });
+      // ▼どこかがクリックされたらサブメニューを消す
+      $('html, #mark').click(function() {
+				 $("#title").show(150);
+				 $("#button").show(150);
+         $('.menu-icon').find(".header-right").slideUp(150);
+      });
+   });
+  </script>
+
+
+
+</body>

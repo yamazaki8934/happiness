@@ -4,7 +4,7 @@
 <body>
   <%= render partial: 'shared/header' %>
   <div class="user-show-name">
-    <p><%= @user.nickname %>さんのページ</p>
+    <p><%= @user.nickname %>さん</p>
   </div>
 
   <% if @user.ratename1.blank? %>
@@ -23,7 +23,7 @@
     <p><%= @user.nickname %>さんへのレビューはまだありません</p>
     <P>あなたが最初のレビューを届けましょう！</P>
     <div class="users-show-button">
-      <%= link_to "最初のレビューを届ける", new_user_message_path(@user.id) %>
+      <%= link_to "最初のレビューを届ける", new_user_message_path(@user.id),class: "logout1" %>
     </div>
   </div>
   <div class="face-down1">
@@ -31,9 +31,12 @@
     </div>
   </div>
   <% else %>
-  <div class="heart1">
-    <div class="heart2">
+  <div class="character-message">
+    <div class="character1-message">
     </div>
+  </div>
+  <div class="users-show-button1">
+    <%= link_to "あなたもレビューを届ける", new_user_message_path(@user.id), class:'choose-button11' %>
   </div>
   <div class="user-show-review">
     <div class="review-box">
@@ -41,6 +44,7 @@
         レビュー　<%= @counts %>件
       </div>
     </div>
+
     <div class="user-show-review2">
       <div class="change-own-review0">
         <div class="review-number0">
@@ -100,13 +104,14 @@
     </div>
   </div>
 
+
   <div class="past-comment">
 
     <div class="past-review">
       <i class="fa fa-envelope-o" aria-hidden="true"></i>
       <%= @user.nickname %>さんへの全ての手紙
     </div>
-      <% @user.messages.each do |message| %>
+      <% @user.messages.order(created_at: :desc).each do |message| %>
       <div class="review-all">
         <div class="review-all1">
           <%= message.body1 %>
@@ -116,9 +121,7 @@
         </div>
       </div>
       <% end %>
-      <div class="users-show-button">
-        <%= link_to "あなたもレビューを届ける", new_user_message_path(@user.id) %>
-      </div>
+
     <% end %>
   </div>
 

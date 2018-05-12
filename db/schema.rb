@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180211150440) do
+ActiveRecord::Schema.define(version: 20180512060949) do
 
   create_table "activities", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "trackable_type"
@@ -67,6 +67,15 @@ ActiveRecord::Schema.define(version: 20180211150440) do
     t.integer  "likes_count"
   end
 
+  create_table "sessions", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.string   "session_id",               null: false
+    t.text     "data",       limit: 65535
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.index ["session_id"], name: "index_sessions_on_session_id", unique: true, using: :btree
+    t.index ["updated_at"], name: "index_sessions_on_updated_at", using: :btree
+  end
+
   create_table "users", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "email",                                default: "", null: false
     t.string   "encrypted_password",                   default: "", null: false
@@ -87,6 +96,8 @@ ActiveRecord::Schema.define(version: 20180211150440) do
     t.string   "ratename4"
     t.string   "ratename5"
     t.text     "introduction",           limit: 65535
+    t.string   "uid"
+    t.string   "provider"
     t.index ["email"], name: "index_users_on_email", unique: true, using: :btree
     t.index ["nickname"], name: "index_users_on_nickname", unique: true, using: :btree
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree

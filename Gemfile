@@ -66,3 +66,7 @@ gem 'devise'
 gem 'pry-rails'
 
 gem 'public_activity'
+
+gem 'omniauth'
+gem 'omniauth-twitter'
+gem 'activerecord-session_store'

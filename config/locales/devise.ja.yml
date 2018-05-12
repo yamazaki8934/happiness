@@ -1,0 +1,6 @@
+ja:
+  devise:
+    confirmations:
+      confirmed: アカウントを登録しました。
+      send_instructions: 登録方法を数分以内にメールでご連絡します。
+      send_paranoid_instructions: メールアドレスが登録されていれば、数分以内にアカウントを確認する方法が記載されているメールが届きます。

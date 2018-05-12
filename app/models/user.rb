@@ -2,7 +2,7 @@ class User < ApplicationRecord
   validates :nickname, presence: true, uniqueness: true
 
   devise :database_authenticatable, :registerable,
-         :recoverable, :rememberable, :trackable, :validatable
+         :recoverable, :rememberable, :trackable, :validatable, :omniauthable
          # :lockable, :timeoutable
 
   has_many :messages

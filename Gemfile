@@ -66,3 +66,6 @@ gem 'devise'
 gem 'pry-rails'
 
 gem 'public_activity'
+
+gem 'omniauth'
+gem 'omniauth-twitter'

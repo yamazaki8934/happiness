@@ -8,13 +8,17 @@
 
 	<div class="recommend">
 		<div class="recommend1">
-      <p class="recommend2">最近更新したユーザー</p>
+      <p class="recommend2">最近更新したユーザー（友達を見つけたらクリックしてレビューページに進みましょう！）</p>
 		</div>
     <div class="recommend3">
       <% @recommends.each do |recommend| %>
 			<p class="recommend4">
 				<%= link_to user_path(recommend.id), style: 'text-decoration: none;' do %>
-					<%= recommend.nickname %>さん
+				  <% if recommend.username.blank? %>
+						<%= recommend.nickname %>さん
+					<% else %>
+						<%= recommend.username %>さん
+					<% end %>
 				<% end %>
 			</p>
 			<% end %>

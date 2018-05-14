@@ -37,7 +37,7 @@ class UsersController < ApplicationController
       @rate.update(rate4: nil)
       @rate.update(rate5: nil)
 
-      redirect_to root_path, notice: '項目の登録に成功しました！'
+      render "posts/done.html.erb", notice: '項目の登録に成功しました！'
     else
       flash.now[:notice] = '更新に失敗しました'
       render :edit

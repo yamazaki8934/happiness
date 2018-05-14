@@ -4,14 +4,23 @@
 <body>
   <%= render partial: 'shared/header' %>
   <div class="user-show-name">
-    <p><%= @user.nickname %>さん</p>
+    <% if @user.username.blank? %>
+      <p><%= @user.nickname %>さん</p>
+    <% else %>
+      <p><%= @user.username %>さん</p>
+    <% end %>
   </div>
 
   <% if @user.ratename1.blank? %>
   <div class="non-profile1">
     <div class="non-profile2">
-      <p><%= @user.nickname %>さんはまだプロフィールを設定していません</p>
-      <p><%= @user.nickname %>さんのプロフィール設定を待ちましょう！</p>
+      <% if @user.username.blank? %>
+        <p><%= @user.nickname %>さんはまだプロフィールを設定していません</p>
+        <p><%= @user.nickname %>さんのプロフィール設定を待ちましょう！</p>
+      <% else %>
+        <p><%= @user.username %>さんはまだプロフィールを設定していません</p>
+        <p><%= @user.username %>さんのプロフィール設定を待ちましょう！</p>
+      <% end %>
     </div>
     <div class="sorry1">
       <div class="sorry2">
@@ -20,7 +29,11 @@
   </div>
   <% elsif @user.messages.blank? %>
   <div class="first-comment">
-    <p><%= @user.nickname %>さんへのレビューはまだありません</p>
+    <% if @user.username.blank? %>
+      <p><%= @user.nickname %>さんへのレビューはまだありません</p>
+    <% else %>
+      <p><%= @user.username %>さんへのレビューはまだありません</p>
+    <% end %>
     <P>あなたが最初のレビューを届けましょう！</P>
     <div class="users-show-button">
       <%= link_to "最初のレビューを届ける", new_user_message_path(@user.id),class: "logout1" %>

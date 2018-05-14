@@ -1,4 +1,5 @@
 <head>
+	<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
 	<!-- ビューポートの設定 -->
 	<meta name="viewport" content="width=device-width,initial-scale=1">
 </head>
@@ -9,9 +10,31 @@
   </div>
 </div>
 
+<div class="twitter_login0">
+	<div class="twitter-exp">
+  	Twitterアカウントで簡単登録！
+	</div>
+	<div class="twitter_login1">
+		<span>
+			<i class="fa fa-twitter" aria-hidden="true"></i>
+		</span>
+		<%- if devise_mapping.omniauthable? %>
+		  <%- resource_class.omniauth_providers.each do |provider| %>
+		    <%= link_to "#{OmniAuth::Utils.camelize(provider)}で登録/ログイン", omniauth_authorize_path(resource_name, provider), class: 'twitter-login10', style: 'text-decoration: none;'  %><br />
+		  <% end -%>
+		<% end -%>
+	</div>
+</div>
+
 <div class="login-login">
   <div class="login-login1">
-    <h2>ログインする</h2>
+    <div class="login-nontwitter">Twitterアカウントをお持ちでない方はこちら</div>
+		<div class="login-mail">
+			<%- if devise_mapping.registerable? && controller_name != 'registrations' %>
+			  <%= link_to "メールアドレスで新規登録", new_registration_path(resource_name) %><br />
+			<% end -%>
+		</div>
+		<div class="login-mail1">メールアドレスでログイン</div>
   </div>
 
   <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
@@ -41,7 +64,7 @@
 
 </div>
 
-<div class="tutorial">
+<!-- <div class="tutorial">
 	<div class="tutorial-margin">
 		<div class="tutorial0">
 			<span class="character">
@@ -79,7 +102,7 @@
 			<p class="exp2-bottom">項目ごとに<i class="fa fa-star"></i>５つで評価！（もちろん匿名です）</p>
 		</div>
 	</div>
-</div>
+</div> -->
 
 <!-- <%= render 'shared/footer' %> -->
 

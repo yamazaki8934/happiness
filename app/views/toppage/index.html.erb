@@ -39,20 +39,27 @@
     <p class="Japanese">ようこそ！</p>
   </div>
 
+	<div class="summary" id="summary">
+    <p class="summary1">Happinessは予め登録した５つの項目について、友達同士でレビューし合えるサービスです。（匿名です）</p>
+		<p class="summary2">まずは「友達をレビューする」か「レビュー項目の登録」を選んでください。</p>
+
+		<!-- <p class="summary3">項目を登録した後はtwitterでシェアして友達に知らせるのがオススメです！</p> -->
+	</div>
+
   <div class="choose" id="button">
 		<div class="choose-left">
 			<div class="choose-button">
-        <%= link_to "レビューを送る", users_path, class:'choose-button10', style:'color: white;' %>
+        <%= link_to "友達をレビューする", users_path, class:'choose-button10', style:'color: white;' %>
       </div>
 		</div>
 		<div class="choose-right">
       <div class="choose-button">
-        <%= link_to "レビューをもらう", edit_user_path(current_user.id), class:'choose-button1', style:'color: white;' %>
+        <%= link_to "レビュー項目の登録", edit_user_path(current_user.id), class:'choose-button1', style:'color: white;' %>
       </div>
 		</div>
 	</div>
 
-	<div class="toppage-recommend">
+	<!-- <div class="toppage-recommend">
 		<div class="recommend1">
       <p class="recommend2">おすすめのユーザー</p>
 		</div>
@@ -80,19 +87,21 @@
 			</p>
 			<% end %>
 		</div>
-	</div>
+	</div> -->
 
 	<script type="text/javascript">
    $(function(){
       // ▼マウスが載ったらサブメニューを表示
-      $("#bar").mouseenter(function(){
+      $("#bar").mouseover(function(){
 				 $("#title").hide();
+				 $("#summary").hide();
          $("#button").hide();
          $(this).find(".header-right").fadeIn();     // 自分のサブメニューを表示する。
       });
       // ▼どこかがクリックされたらサブメニューを消す
       $('html, #mark').click(function() {
 				 $("#title").show(150);
+				 $("#summary").show(150);
 				 $("#button").show(150);
          $('.menu-icon').find(".header-right").slideUp(150);
       });

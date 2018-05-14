@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180512060949) do
+ActiveRecord::Schema.define(version: 20180513205538) do
 
   create_table "activities", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "trackable_type"
@@ -98,6 +98,7 @@ ActiveRecord::Schema.define(version: 20180512060949) do
     t.text     "introduction",           limit: 65535
     t.string   "uid"
     t.string   "provider"
+    t.string   "username"
     t.index ["email"], name: "index_users_on_email", unique: true, using: :btree
     t.index ["nickname"], name: "index_users_on_nickname", unique: true, using: :btree
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree

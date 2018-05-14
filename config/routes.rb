@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   devise_for :users, controllers: { omniauth_callbacks: 'users/omniauth_callbacks' }
 
+  get "posts/:id/done" => "posts#done"
   resources :toppage, only: [:index]
   resources :users do
     collection do

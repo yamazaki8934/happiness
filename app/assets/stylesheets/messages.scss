@@ -1444,7 +1444,7 @@ ul.drop-menu li:hover ul {
   .user-title-toppage {
     position: absolute;
     left: 98.67px;
-    top: 100px;
+    top: 80px;
     width: 60%;
 
   }
@@ -1454,7 +1454,7 @@ ul.drop-menu li:hover ul {
     margin: 0px;
     word-wrap: break-word;
     font-family: Circular,-apple-system,BlinkMacSystemFont,Roboto,Helvetica Neue,sans-serif;
-    font-size: 36px;
+    font-size: 30px;
     line-height: 40px;
     letter-spacing: -0.6px;
     padding-top: 6px;
@@ -1463,7 +1463,7 @@ ul.drop-menu li:hover ul {
   }
 
   .Japanese0 {
-    font-size: 30px;
+    font-size: 25px;
     font-weight: 700;
     margin-top: 5px;
     margin-left: 3px;
@@ -1472,7 +1472,7 @@ ul.drop-menu li:hover ul {
   }
 
   .Japanese {
-    font-size: 30px;
+    font-size: 25px;
     font-weight: 700;
     margin-top: 5px;
     margin-left: 23px;
@@ -1507,10 +1507,26 @@ ul.drop-menu li:hover ul {
     font-size: 30px;
   }
 
+  .summary {
+    position: absolute;
+    top: 200px;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  .summary1 {
+    font-weight: 700;
+    margin-bottom: 50px;
+  }
+
+  .summary2 {
+    margin-bottom: 50px;
+  }
+
   .choose-button {
     ox-shadow:none;
     position:relative;
-    margin-top: 240px;
+    margin-top: 390px;
     display:block;
     padding:17px;
     width:100px;
@@ -1739,11 +1755,85 @@ ul.drop-menu li:hover ul {
   .login-login {
     position: absolute;
     left: 40px;
+    top: 250px;
+  }
+
+  .login-login-new {
+    position: absolute;
+    left: 40px;
+    top: 120px;
   }
 
   .login-login1 {
-    font-size: 12px;
-    font-weight: lighter;
+    font-size: 15px;
+    font-weight: normal;
+  }
+
+  .twitter-exp {
+    font-size: 20px;
+    font-weight: 700;
+    margin-bottom: 10px;
+    position: absolute;
+    left: 0px;
+    top: 0px;
+  }
+
+  .twitter_login0 {
+    position: absolute;
+    left: 40px;
+    top: 140px;
+  }
+
+  .twitter_login1 {
+    font-size: 20px;
+    font-weight: 400;
+    border: 3px solid #fff;
+    width: 300px;
+    height: 37px;
+    background-color: #55ACEE;
+    color: #FFFFFF;
+    text-shadow: none;
+    background-image: none;
+    box-shadow: 0px 0em 0px 0px rgba(34,36,38,0.15) inset;
+    cursor:pointer;
+    -webkit-border-radius: 6px;
+    -moz-border-radius: 6px;
+    -ms-border-radius: 6px;
+    -o-border-radius: 6px;
+    border-radius: 6px;
+    -webkit-transition: all .1s ease-in-out;
+    -moz-transition: all .1s ease-in-out;
+    transition: all .1s ease-in-out;
+    outline:none;
+    margin-top: 50px;
+    margin-left: 0px;
+  }
+
+  .twitter_login10 {
+    width: 300px;
+    font-weight: 400;
+    border: 3px solid #fff;
+    font-size: 20px;
+    text-decoration: none;
+  }
+
+  .fa-twitter {
+    margin-left: 15px;
+  }
+
+  .login-nontwitter {
+    font-size: 18px;
+    margin-right: 30px;
+    margin-top: 50px;
+  }
+
+  .login-mail {
+    font-size: 18px;
+    margin-top: 5px;
+  }
+
+  .login-mail1 {
+    margin-top: 5px;
   }
 
   .original_css1 {
@@ -2109,4 +2199,31 @@ ul.drop-menu li:hover ul {
   .check-box-button {
     margin-top: 25px;
   }
+
+  .done0 {
+    position: absolute;
+    left: 30px;
+    top: 50px;
+  }
+
+  .done2 {
+    font-family: "Kozuka Gothic Pro",sans-serif;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 32px;
+    margin-bottom: 32px;
+  }
+
+  .done3 {
+    position: relative;
+    left: 0px;
+  }
+
+  .twitter-share-button {
+    position: absolute;
+    left: 30px;
+    top: 230px;
+  }
+
+
 }

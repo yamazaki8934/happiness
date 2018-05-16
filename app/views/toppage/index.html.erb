@@ -59,35 +59,16 @@
 		</div>
 	</div>
 
-	<!-- <div class="toppage-recommend">
-		<div class="recommend1">
-      <p class="recommend2">おすすめのユーザー</p>
+  <div class="my-review-show0">
+		<div class="my-review-show1">
+			友達からもらったレビューを見る場合は下の「レビューを見る」を選んでください。
 		</div>
-    <div class="recommend3">
-      <% @recommends.each do |recommend| %>
-			<p class="recommend4">
-				<%= link_to user_path(recommend.id), style: 'text-decoration: none;', class: 'recommend5' do %>
-					<%= recommend.nickname %>さん
-				<% end %>
-			</p>
-			<% end %>
+		<div class="choose-center">
+      <div class="choose-center1">
+        <%= link_to "レビューを見る", receife_path(current_user.id), class:'choose-button1', style:'color: white;' %>
+      </div>
 		</div>
 	</div>
-
-	<div class="history">
-    <div class="recommend1">
-      <p class="recommend2">あなたがレビューを送ったユーザー</p>
-		</div>
-		<div class="recommend3">
-			<% @histories.each do |history| %>
-			<p class="recommend4">
-				<%= link_to user_path(history.id), style: 'text-decoration: none;' do %>
-					<%= history.nickname %>さん
-				<% end %>
-			</p>
-			<% end %>
-		</div>
-	</div> -->
 
 	<script type="text/javascript">
    $(function(){

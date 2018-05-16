@@ -4,8 +4,8 @@ class UsersController < ApplicationController
   end
 
   def index
-    @users = User.all
-    @recommends = User.where.not(id: current_user.id).order(updated_at: :desc).limit(5)
+    @users = User.all.order(updated_at: :desc)
+    @recommends = User.where.not(id: current_user.id).order(updated_at: :desc).limit(8)
   end
 
   def edit

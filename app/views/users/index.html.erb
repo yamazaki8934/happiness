@@ -25,38 +25,6 @@
 		</div>
 	</div>
 
-
-	<!-- <input type=form id="form" placeholder="ユーザー名を入力してください" style="width: 250px;"/>
-	<ul id="result">
-
-  </ul> -->
-
-	<!-- <div class="user-list">
-		<div class="follow-list1">
-			フォローしている友達
-		</div>
-		<div class="user-list1">
-			<% if @follow.blank? %>
-			<div class="user-list2">
-			  <p>
-			    フォローしている友達はいません
-				</p>
-				<p>
-          マイページから友達をフォローしてみましょう！
-				</p>
-			</div>
-			<% else %>
-			<% @follows.each do |follow| %>
-			<p>
-				<%= link_to user_path(follow.id) do %>
-					<%= follow.nickname %>さん
-				<% end %>
-			</p>
-			<% end %>
-			<% end %>
-		</div>
-	</div> -->
-
   <div class="user-list">
 		<div class="user-all">
       <p class="recommend2">全てのユーザー</p>
@@ -66,7 +34,11 @@
       <% if current_user.id != user.id %>
       <p class="recommend4">
         <%= link_to user_path(user.id), style: 'text-decoration: none;' do %>
-          <%= user.nickname %>さん
+				  <% if user.username.blank? %>
+          	<%= user.nickname %>さん
+					<% else %>
+						<%= user.username %>さん
+					<% end %>
         <% end %>
       </p>
       <% end %>

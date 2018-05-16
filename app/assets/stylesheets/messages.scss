@@ -8,6 +8,58 @@ body {
   background-color: #FFCC99;
 }
 
+.done0 {
+  position: absolute;
+  top: 100px;
+  left: 100px;
+}
+
+.row {
+  position: absolute;
+  top: 250px;
+  left: 100px;
+}
+
+.twitter_login0 {
+  position: absolute;
+  left: 500px;
+}
+
+.twitter_login1 {
+  font-size: 20px;
+  font-weight: 400;
+  border: 3px solid #fff;
+  width: 300px;
+  height: 37px;
+  background-color: #55ACEE;
+  color: #FFFFFF;
+  text-shadow: none;
+  background-image: none;
+  box-shadow: 0px 0em 0px 0px rgba(34,36,38,0.15) inset;
+  cursor:pointer;
+  -webkit-border-radius: 6px;
+  -moz-border-radius: 6px;
+  -ms-border-radius: 6px;
+  -o-border-radius: 6px;
+  border-radius: 6px;
+  -webkit-transition: all .1s ease-in-out;
+  -moz-transition: all .1s ease-in-out;
+  transition: all .1s ease-in-out;
+  outline:none;
+  margin-top: 30px;
+  margin-left: 0px;
+}
+
+.twitter-exp {
+  margin-top: 20px;
+  font-weight: 700;
+}
+
+.login-login {
+  position: absolute;
+  top: 250px;
+}
+
 .tutorial {
   position: absolute;
   left: 500px;
@@ -54,10 +106,16 @@ body {
 
 .user-title-toppage {
   position: absolute;
-  left: 98.67px;
+  left: 500px;
   top: 100px;
   width: 60%;
 
+}
+
+.summary {
+  position: absolute;
+  top: 300px;
+  left: 340px;
 }
 
 .English {
@@ -131,6 +189,13 @@ body {
   color: #484848;
 }
 
+.choose {
+  position: absolute;
+  left: 420px;
+  top: 260px;
+  width: 70%;
+}
+
 .choose-button {
   ox-shadow:none;
   position:relative;
@@ -174,17 +239,35 @@ body {
   font-weight: 300;
 }
 
-.toppage-recommend {
+.my-review-show0 {
   position: absolute;
-  left: 20px;
-  top: 400px;
-  width: 77%;
+  top: 700px;
+  left: 340px;
 }
 
-.history {
-  position: absolute;
-  left: 20px;
-  top: 680px;
+.choose-center1 {
+  box-shadow:none;
+  position:relative;
+  margin-top:30px;
+  display:block;
+  padding:17px;
+  width:100px;
+  font-size:17px;
+  background:#f26964;
+  color:#f4f4f4;
+  box-shadow:0px 3px 0px #ab4b47;
+  cursor:pointer;
+  -webkit-border-radius: 6px;
+  -moz-border-radius: 6px;
+  -ms-border-radius: 6px;
+  -o-border-radius: 6px;
+  border-radius: 6px;
+  -webkit-transition: all .1s ease-in-out;
+  -moz-transition: all .1s ease-in-out;
+  transition: all .1s ease-in-out;
+  outline:none;
+  float: left;
+  margin-left: 185px;
 }
 
 .user-title1 {
@@ -1510,6 +1593,7 @@ ul.drop-menu li:hover ul {
   .summary {
     position: absolute;
     top: 200px;
+    left: 30px;
     padding-left: 20px;
     padding-right: 20px;
   }
@@ -1523,10 +1607,41 @@ ul.drop-menu li:hover ul {
     margin-bottom: 50px;
   }
 
+  .choose {
+    position: absolute;
+    left: 30px;
+    width: 80%;
+  }
+
+  .choose-center1 {
+    ox-shadow:none;
+    position:relative;
+    margin-top:30px;
+    display:block;
+    padding:17px;
+    width:100px;
+    font-size:17px;
+    background:#f26964;
+    color:#f4f4f4;
+    box-shadow:0px 3px 0px #ab4b47;
+    cursor:pointer;
+    -webkit-border-radius: 6px;
+    -moz-border-radius: 6px;
+    -ms-border-radius: 6px;
+    -o-border-radius: 6px;
+    border-radius: 6px;
+    -webkit-transition: all .1s ease-in-out;
+    -moz-transition: all .1s ease-in-out;
+    transition: all .1s ease-in-out;
+    outline:none;
+    float: left;
+    margin-left: 95px;
+  }
+
   .choose-button {
     ox-shadow:none;
     position:relative;
-    margin-top: 390px;
+    margin-top: 190px;
     display:block;
     padding:17px;
     width:100px;
@@ -1564,6 +1679,13 @@ ul.drop-menu li:hover ul {
     color: white;
     margin-left: 15px;
     font-weight: 300;
+  }
+
+  .my-review-show0 {
+    position: absolute;
+    top: 600px;
+    width: 84%;
+    left: 30px;
   }
 
   .toppage-recommend {
@@ -1725,7 +1847,7 @@ ul.drop-menu li:hover ul {
   .user-list {
     position: absolute;
     left: 50px;
-    top: 430px;
+    top: 570px;
   }
 
   .user-list2 {

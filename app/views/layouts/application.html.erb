@@ -22,6 +22,15 @@
         enable_page_level_ads: true
       });
     </script>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-119404548-1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'UA-119404548-1');
+    </script>
   </head>
 
   <body>
@@ -44,5 +53,11 @@
       </div>
     <% end %>
     <%= yield %>
+
+    <footer>
+      <!-- admax -->
+      <script src="//adm.shinobi.jp/s/044b63c8574405f660d632bdaa2b69a5"></script>
+      <!-- admax -->
+    </footer>
   </body>
 </html>

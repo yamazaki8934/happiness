@@ -1476,8 +1476,8 @@ ul.drop-menu li:hover ul {
 .footer {
   position: absolute;
   bottom: 0px;
-  right: 50px;
-  font-size: 12px;
+  right: 30px;
+  margin-top: 40px;
 }
 
 @media screen and ( max-width:479px )
@@ -1593,7 +1593,7 @@ ul.drop-menu li:hover ul {
   .summary {
     position: absolute;
     top: 200px;
-    left: 30px;
+    left: 20px;
     padding-left: 20px;
     padding-right: 20px;
   }
@@ -1609,7 +1609,7 @@ ul.drop-menu li:hover ul {
 
   .choose {
     position: absolute;
-    left: 30px;
+    left: 20px;
     width: 80%;
   }
 
@@ -1685,7 +1685,7 @@ ul.drop-menu li:hover ul {
     position: absolute;
     top: 600px;
     width: 84%;
-    left: 30px;
+    left: 20px;
   }
 
   .toppage-recommend {
@@ -1877,7 +1877,7 @@ ul.drop-menu li:hover ul {
   .login-login {
     position: absolute;
     left: 40px;
-    top: 250px;
+    top: 350px;
   }
 
   .login-login-new {
@@ -1900,10 +1900,19 @@ ul.drop-menu li:hover ul {
     top: 0px;
   }
 
+  .summary-top {
+    position: absolute;
+    top: 100px;
+    left: 20px;
+    padding-left: 20px;
+    padding-right: 20px;
+    font-size: 20px;
+  }
+
   .twitter_login0 {
     position: absolute;
     left: 40px;
-    top: 140px;
+    top: 250px;
   }
 
   .twitter_login1 {

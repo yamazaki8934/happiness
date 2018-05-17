@@ -1877,7 +1877,7 @@ ul.drop-menu li:hover ul {
   .login-login {
     position: absolute;
     left: 40px;
-    top: 350px;
+    top: 600px;
   }
 
   .login-login-new {
@@ -2356,5 +2356,36 @@ ul.drop-menu li:hover ul {
     top: 230px;
   }
 
+  .ad {
+    position: absolute;
+    top: 380px;
+    left: 40px;
+  }
 
+  .ad1 {
+    position: absolute;
+    top: 800px;
+    left: 30px;
+  }
+
+  .ad2 {
+    position: absolute;
+    top: 300px;
+    left: 30px;
+  }
+
+  .face-down3 {
+    background-image: image-url("face-down.jpg");
+
+    background-size: 280px;
+    width: 300px;
+    height: 250px;
+  }
+
+  .row {
+    position: absolute;
+    top: 0px;
+    width: 40%;
+    left: 0px;
+  }
 }

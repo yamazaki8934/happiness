@@ -1,5 +1,9 @@
 <body>
-  <%= render partial: 'shared/header' %>
+  <header>
+    <div class="toppage">
+      <%= link_to 'トップページへ', users_path, class:'toppage1', style: 'text-decoration: none;' %>
+    </div>
+  </header>
   <div class="done0">
     <div class="done1">
       <p class="done2">項目の登録が完了しました！</p>
@@ -16,7 +20,7 @@
     <!-- <a href="http://twitter.com/share?url=url/posts/<%= @post_id %>">
     <button type="button" class="btn btn-primary btn-lg btn-block col-xs-12">Twitterでシェア</button> -->
     <a class="twitter-share-button"
-    href="http://twitter.com/share?url=http://happiness-warm.com&text=レビュー項目を登録しました!ログインしてレビューしてね!&hashtags=友達同士のレビューアプリ" target="_blank"
+    href="http://twitter.com/share?url=http://happiness-warm.com/users/&text=レビュー項目を登録しました!私の名前をタップしてレビューしてね!&hashtags=happiness" target="_blank"
     data-size="large"
     data-url="https://dev.twitter.com/web/tweet-button"
     data-via="twitterdev"

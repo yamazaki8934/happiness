@@ -4,25 +4,6 @@
 </head>
 <body>
   <%= render partial: 'shared/header' %>
-  <!-- <ul class="drop-menu">
-    <li>
-      <ul>
-        <li>
-          <a href="#"><%= link_to 'トップページへ', root_path, class:'toppage2' %></a>
-        </li>
-        <li>
-          <%= link_to 'あなた宛のレビューと手紙を読む', receife_path(current_user.id), method: :get %>
-        </li>
-        <li>
-          <%= link_to 'アカウント情報の変更', edit_profile_path(current_user.id), method: :get %>
-        </li>
-      </ul>
-    </li>
-  </ul> -->
-
-  <!-- <div class="user-title-edit">
-    <%= current_user.nickname %>さん、こんにちは！
-  </div> -->
 
   <div class="change-own-page1">
     <div class="change-own-page2">
@@ -64,26 +45,5 @@
     <%= f.submit 'これで登録！', :class=>"nickname-btn" %>
     <% end %>
   </div>
-
-  <!-- <div class="change-nickname">
-    <div class="account-edit">
-      登録情報の変更
-    </div>
-    <div class="account-edit0">
-      <div class="account-edit1">
-        <%= form_for(current_user) do |f| %>
-        <div class="nickname">
-          <%= f.label :nickname, 'ニックネームの変更', :class => 'nickname-change' %>
-          <%= f.text_field :nickname, :placeholder => "ニックネーム", :class => 'nickname-change1' %>
-        </div>
-        <div class="nickname1">
-          <%= f.label :email, 'メールアドレスの変更', :class => 'address-change' %>
-          <%= f.text_field :email, :placeholder => "メールアドレス", :class => 'nickname-change2' %>
-        </div>
-          <%= f.submit '変更', :class=>"nickname-btn" %>
-        <% end %>
-      </div>
-    </div>
-  </div> -->
 
 </body>

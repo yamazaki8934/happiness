@@ -23,17 +23,65 @@
 					</ul>
 				</div>
 			</span>
-			<!-- <span class="fa fa-bell fa-2x bell-icon" id="bell">
-			  <div class="header-another">
-					<% @activities.each do |activity| %>
-					  <%= link_to activity.owner.nickname, activity.owner if activity.owner -%>
-					  <%= link_to activity.trackable.nickname, activity.trackable -%>
-          <% end %>
-				</div>
-			</span> -->
 	  </div>
 	</header>
 
+	<% if current_user.sign_in_count == 1 %>
+	<div class="change-own-toppage1" id="top">
+    <div class="change-own-page2">
+      まずはみんなにレビューしてほしい項目を５つ登録しましょう！
+    </div>
+
+    <%= form_for(current_user) do |f| %>
+    <div class="change-own-page3">
+      1<%= f.text_field :ratename1, :placeholder => "たとえば：優しさ (10文字以内)", :class => 'nickname-change1' %>
+    </div>
+    <div class="change-own-page3">
+      2<%= f.text_field :ratename2, :placeholder => "たとえば：ピュア (10文字以内)", :class => 'nickname-change1' %>
+    </div>
+    <div class="change-own-page3">
+      3<%= f.text_field :ratename3, :placeholder => "たとえば：包容力 (10文字以内)", :class => 'nickname-change1' %>
+    </div>
+    <div class="change-own-page3">
+      4<%= f.text_field :ratename4, :placeholder => "ご自由にどうぞ笑 (10文字以内)", :class => 'nickname-change1' %>
+    </div>
+    <div class="change-own-page3">
+      5<%= f.text_field :ratename5, :placeholder => "ご自由にどうぞ笑 (10文字以内)", :class => 'nickname-change1' %>
+    </div>
+    <div class="change-own-page12">
+      <i class="fa fa-check-square-o" aria-hidden="true"></i>
+      レビューは何度でも更新できます！（更新すると、前にもらったレビューの平均値はリセットされます）
+    </div>
+    <div class="introduction1">
+      <span>
+        <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
+      </span>
+      <span class="introduction2">
+        つぶやき
+      </span>
+      <div class="introduction3">
+        <%= f.text_area :introduction, :placeholder => "よろしくお願いします！", :class => 'nickname-change2' %>
+      </div>
+    </div>
+
+    <%= f.submit 'これで登録！', :class=>"nickname-btn" %>
+    <% end %>
+  </div>
+	<script type="text/javascript">
+   $(function(){
+      // ▼マウスが載ったらサブメニューを表示
+      $("#bar").mouseover(function(){
+				 $("#top").hide();
+         $(this).find(".header-right").fadeIn();     // 自分のサブメニューを表示する。
+      });
+      // ▼どこかがクリックされたらサブメニューを消す
+      $('html, #mark').click(function() {
+				 $("#top").show(150);
+         $('.menu-icon').find(".header-right").slideUp(150);
+      });
+   });
+  </script>
+	<% else %>
   <div class="user-title-toppage" id="title">
     <span class="English">Happiness</span><span class="Japanese0">へ</span>
     <p class="Japanese">ようこそ！</p>
@@ -67,6 +115,7 @@
       </div>
 		</div>
 	</div>
+	<% end %>
 
 	<div class="ad1">
 		<!-- admax -->

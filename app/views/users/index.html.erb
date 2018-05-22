@@ -4,11 +4,156 @@
 </head>
 
 <body>
-  <%= render partial: 'shared/header' %>
+	<% if user_signed_in? && current_user.sign_in_count == 1 && current_user.ratename1.blank? %>
+		<div class="container">
+			<span class="fa fa-bars fa-2x menu-icon" id="bar">
+				<div class="header-right">
+					<i class="fa fa-times-circle x-mark" id="mark"></i>
+					<ul class="header-right1">
+						<li class="my-account">
+							<%= link_to 'もらったレビューを確認する', receife_path(current_user.id), method: :get, class:'logout1', style:'color: black;' %>
+						</li>
+						<li class="my-account">
+							<%= link_to 'レビュー項目の更新', edit_user_path(current_user.id), method: :get, class:'logout1', style:'color: black;' %>
+						</li>
+						<li class="my-account">
+							<%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class:'logout1', style:'color: black;' %>
+						</li>
+					</ul>
+				</div>
+			</span>
+		</div>
+		<div class="change-own-toppage1" id="top">
+			<div class="change-own-page2">
+				まずはみんなにレビューしてほしい項目を５つ登録しましょう！
+			</div>
 
-	<div class="recommend">
+			<%= form_for(current_user) do |f| %>
+			<div class="change-own-page3">
+				1<%= f.text_field :ratename1, :placeholder => "たとえば：優しさ (10文字以内)", :class => 'nickname-change1' %>
+			</div>
+			<div class="change-own-page3">
+				2<%= f.text_field :ratename2, :placeholder => "たとえば：ピュア (10文字以内)", :class => 'nickname-change1' %>
+			</div>
+			<div class="change-own-page3">
+				3<%= f.text_field :ratename3, :placeholder => "たとえば：包容力 (10文字以内)", :class => 'nickname-change1' %>
+			</div>
+			<div class="change-own-page3">
+				4<%= f.text_field :ratename4, :placeholder => "ご自由にどうぞ笑 (10文字以内)", :class => 'nickname-change1' %>
+			</div>
+			<div class="change-own-page3">
+				5<%= f.text_field :ratename5, :placeholder => "ご自由にどうぞ笑 (10文字以内)", :class => 'nickname-change1' %>
+			</div>
+			<div class="change-own-page12">
+				<i class="fa fa-check-square-o" aria-hidden="true"></i>
+				レビューは何度でも更新できます！（更新すると、前にもらったレビューの平均値はリセットされます）
+			</div>
+			<div class="introduction1">
+				<span>
+					<i class="fa fa-pencil-square-o" aria-hidden="true"></i>
+				</span>
+				<span class="introduction2">
+					つぶやき
+				</span>
+				<div class="introduction3">
+					<%= f.text_area :introduction, :placeholder => "よろしくお願いします！", :class => 'nickname-change2' %>
+				</div>
+			</div>
+
+			<%= f.submit 'これで登録！', :class=>"nickname-btn" %>
+			<% end %>
+		</div>
+		<script type="text/javascript">
+		 $(function(){
+				// ▼マウスが載ったらサブメニューを表示
+				$("#bar").mouseover(function(){
+					 $("#top").hide();
+					 $(this).find(".header-right").fadeIn();     // 自分のサブメニューを表示する。
+				});
+				// ▼どこかがクリックされたらサブメニューを消す
+				$('html, #mark').click(function() {
+					 $("#top").show(150);
+					 $('.menu-icon').find(".header-right").slideUp(150);
+				});
+		 });
+		</script>
+	<% elsif user_signed_in? && current_user.sign_in_count == 1 && current_user.ratename1.present? %>
+		<header>
+		<div class="container">
+			<span class="fa fa-bars fa-2x menu-icon" id="bar">
+				<div class="header-right">
+					<i class="fa fa-times-circle x-mark" id="mark"></i>
+					<ul class="header-right1">
+						<li class="my-account">
+							<%= link_to 'もらったレビューを確認する', receife_path(current_user.id), method: :get, class:'logout1', style:'color: black;' %>
+						</li>
+						<li class="my-account">
+							<%= link_to 'レビュー項目の更新', edit_user_path(current_user.id), method: :get, class:'logout1', style:'color: black;' %>
+						</li>
+						<li class="my-account">
+							<%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class:'logout1', style:'color: black;' %>
+						</li>
+					</ul>
+				</div>
+			</span>
+		</div>
+		</header>
+		<div class="summary-top1" id="summary">
+			<p class="summary1">Happinessは友達同士でのクチコミアプリです</p>
+		</div>
+		<div class="recommend" id="recommend1">
+			<div class="recommend1">
+	      <p class="recommend2">友達を見つけてタップ！</p>
+			</div>
+	    <div class="recommend3">
+	      <% @recommends.each do |recommend| %>
+				<p class="recommend4">
+					<%= link_to user_path(recommend.id), style: 'text-decoration: none;' do %>
+					  <% if recommend.username.blank? %>
+							<%= recommend.nickname %>さん
+						<% else %>
+							<%= recommend.username %>さん
+						<% end %>
+					<% end %>
+				</p>
+				<% end %>
+			</div>
+		</div>
+
+		<% if user_signed_in? %>
+		<% else %>
+		<div class="done444">
+			<%= link_to '簡単登録・ログインページへ', new_user_session_path %>
+		</div>
+		<% end %>
+
+  <% elsif user_signed_in? && current_user.sign_in_count != 1 %>
+	<header>
+	<div class="container">
+		<span class="fa fa-bars fa-2x menu-icon" id="bar">
+			<div class="header-right">
+				<i class="fa fa-times-circle x-mark" id="mark"></i>
+				<ul class="header-right1">
+					<li class="my-account">
+						<%= link_to 'もらったレビューを確認する', receife_path(current_user.id), method: :get, class:'logout1', style:'color: black;' %>
+					</li>
+					<li class="my-account">
+						<%= link_to 'レビュー項目の更新', edit_user_path(current_user.id), method: :get, class:'logout1', style:'color: black;' %>
+					</li>
+					<li class="my-account">
+						<%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class:'logout1', style:'color: black;' %>
+					</li>
+				</ul>
+			</div>
+		</span>
+	</div>
+	</header>
+	<div class="summary-top1" id="summary">
+		<p class="summary1">Happinessは友達同士でのクチコミアプリです</p>
+	</div>
+	<div class="recommend" id="recommend1">
 		<div class="recommend1">
-      <p class="recommend2">最近更新したユーザー（友達を見つけたらクリックしてレビューページに進みましょう！）</p>
+      <p class="recommend2">友達を見つけてタップ！</p>
 		</div>
     <div class="recommend3">
       <% @recommends.each do |recommend| %>
@@ -25,27 +170,64 @@
 		</div>
 	</div>
 
-  <div class="user-list">
-		<div class="user-all">
-      <p class="recommend2">全てのユーザー</p>
-		</div>
-    <div class="user-list1">
-      <% @users.each do |user| %>
-      <% if current_user.id != user.id %>
-      <p class="recommend4">
-        <%= link_to user_path(user.id), style: 'text-decoration: none;' do %>
-				  <% if user.username.blank? %>
-          	<%= user.nickname %>さん
-					<% else %>
-						<%= user.username %>さん
-					<% end %>
-        <% end %>
-      </p>
-      <% end %>
-      <% end %>
-    </div>
+	<% if user_signed_in? %>
+	<% else %>
+	<div class="done444">
+		<%= link_to '簡単登録・ログインページへ', new_user_session_path %>
+	</div>
+	<% end %>
 
-  </div>
+	<% else %>
+	<div class="summary-top1" id="summary">
+		<p class="summary1">Happinessは友達同士でのクチコミアプリです</p>
+	</div>
+	<div class="recommend" id="recommend2">
+		<div class="recommend1">
+      <p class="recommend2">まずは友達を見つけてタップ！</p>
+		</div>
+    <div class="recommend3">
+      <% @recomms.each do |recomm| %>
+			<p class="recommend4">
+				<%= link_to user_path(recomm.id), style: 'text-decoration: none;' do %>
+				  <% if recomm.username.blank? %>
+						<%= recomm.nickname %>さん
+					<% else %>
+						<%= recomm.username %>さん
+					<% end %>
+				<% end %>
+			</p>
+			<% end %>
+		</div>
+	</div>
+
+  <% if user_signed_in? %>
+	<% else %>
+	<div class="done444">
+		<%= link_to '簡単登録・ログインページへ', new_user_session_path %>
+	</div>
+	<% end %>
+
+	<% end %>
+
+
+	<script type="text/javascript">
+   $(function(){
+      // ▼マウスが載ったらサブメニューを表示
+      $("#bar").mouseover(function(){
+				 $("#summary").hide();
+				 $("#recommend1").hide();
+				 $("#recommend2").hide();
+         $(this).find(".header-right").fadeIn();     // 自分のサブメニューを表示する。
+      });
+      // ▼どこかがクリックされたらサブメニューを消す
+      $('html, #mark').click(function() {
+				 $("#summary").show(150);
+				 $("#recommend1").show(150);
+				 $("#recommend2").show(150);
+         $('.menu-icon').find(".header-right").slideUp(150);
+      });
+   });
+  </script>
 
 
 

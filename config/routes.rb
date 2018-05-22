@@ -17,5 +17,5 @@ Rails.application.routes.draw do
   end
   resources :follows
   resources :profiles, only: [:edit, :update]
-  root 'toppage#index'
+  root 'users#index'
 end

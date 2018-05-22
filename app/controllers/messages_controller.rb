@@ -9,12 +9,15 @@ class MessagesController < ApplicationController
     @user = User.find(session[:user_id])
     @message = Message.new(message_params)
     @message.save
-    
-    redirect_to root_path, notice: '届けました！'
+    if user_signed_in?
+      redirect_to users_path, notice: '届けました！'
+    else
+      render "posts/done1.html.erb"
+    end
   end
 
   private
   def message_params
-    params.require(:message).permit(:rate1, :rate2, :rate3, :rate4, :rate5, :body1).merge(user_id: session[:user_id], currentuser_id: current_user.id)
+    params.require(:message).permit(:rate1, :rate2, :rate3, :rate4, :rate5, :body1).merge(user_id: session[:user_id])
   end
 end

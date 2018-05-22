@@ -5,7 +5,11 @@ class UsersController < ApplicationController
 
   def index
     @users = User.all.order(updated_at: :desc)
+    @recomms = User.all.order(updated_at: :desc).limit(8)
+    if user_signed_in?
     @recommends = User.where.not(id: current_user.id).order(updated_at: :desc).limit(8)
+    else
+    end
   end
 
   def edit

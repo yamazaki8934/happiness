@@ -48,11 +48,6 @@ class UsersController < ApplicationController
     end
   end
 
-  # def search
-  #   @users = User.where('nickname LIKE(?)', "%#{params[:keyword]}%")
-  #
-  # end
-
   private
    def user_params
     params.require(:user).permit(:ratename1, :ratename2, :ratename3, :ratename4, :ratename5, :introduction)

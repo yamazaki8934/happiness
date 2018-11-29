@@ -16,3 +16,22 @@
     </span>
   <% end %>
 <% end %>
+
+
+<% if @cookie >= 91 %>
+  <%= image_tag("/sindan/bad.jpeg", :class => "bad-image") %>
+<% elsif @cookie >= 86 && @cookie <= 90 %>
+  <%= image_tag("/sindan/very-good.jpeg", :class => "bad-image") %>
+<% elsif @cookie >= 81 && @cookie <= 85 %>
+  <%= image_tag("/sindan/very-good.jpeg", :class => "bad-image") %>
+<% elsif @cookie >= 76 && @cookie <= 80 %>
+  <%= image_tag("/sindan/bad.jpeg", :class => "bad-image") %>
+<% elsif @cookie >= 71 && @cookie <= 75 %>
+  <%= image_tag("/sindan/bad.jpeg", :class => "bad-image") %>
+<% elsif @cookie >= 61 && @cookie <= 70 %>
+  <%= image_tag("/sindan/bad.jpeg", :class => "bad-image") %>
+<% else %>
+  <%= image_tag("/sindan/bad.jpeg", :class => "bad-image") %>
+<% end %>
+
+<%= link_to 'もう一度やる', services_sindans_index_path, class:'toppage-link' %>

@@ -16,6 +16,8 @@
     <meta property="og:image" content="<%= asset_url('happiness-icon.png') %>" />
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+  	<script src="https://code.jquery.com/jquery-3.2.1.min.js" type="text/javascript"></script>
     <script>
       (adsbygoogle = window.adsbygoogle || []).push({
         google_ad_client: "ca-pub-5485294426707826",
@@ -34,19 +36,6 @@
   </head>
 
   <body>
-    <!-- <div class="header">
-
-      <div class="toppage-header-btn">
-        <%= link_to ".........", root_path %>
-      </div>
-
-      <div class="tab">
-        <i class="fa fa-bars tab-bar"></i>
-      </div>
-      <div class="notification">
-        <i class="fa fa-bell notice"></i>
-      </div>
-    </div> -->
     <% flash.each do |key, value| %>
       <div class="alert alert-<%= key %>">
         <%= value %>
@@ -54,6 +43,6 @@
     <% end %>
     <%= yield %>
 
-    
+
   </body>
 </html>

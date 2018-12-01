@@ -1,0 +1,27 @@
+.happiness_header
+  - if user_signed_in?
+    = link_to(toppage_index_path) do
+      %span.happiness_header_image
+        = image_tag "happiness_logo.jpg"
+      %span.happiness_header_title
+        Happiness
+  - else
+    = link_to(users_path) do
+      %span.happiness_header_image
+        = image_tag "happiness_logo.png"
+      %span.happiness_header_title
+        Happiness
+
+  %span.happiness_header_bar.fa.fa-bars.fa-2x
+    .happiness_header_modal
+      .happiness_header_modal_close
+        .happiness_header_modal_close_btn
+          = image_tag "wish/close_button.png", class: "happiness_header_modal_close_btn_size"
+
+      %ul.happiness_header_modal_ul
+        - if user_signed_in?
+          %li.happiness_header_modal_li
+            = link_to "トップへ", services_happiness_index_path, class: "happiness_header_modal_li_font"
+        - if user_signed_in?
+          %li.happiness_header_modal_li
+            = link_to "ログアウト", users_sign_out_path, method: :delete, class: "happiness_header_modal_li_font"

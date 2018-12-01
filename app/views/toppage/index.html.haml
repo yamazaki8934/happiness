@@ -1,0 +1,75 @@
+.happiness_toppage
+  %header.wrap
+    = render "shared/header"
+
+  %session.wrap
+    .happiness_toppage_content
+      .happiness_toppage_content_catch
+        あなたの能力・性格のレビューサイト
+				%br
+				つくれます
+      .happiness_toppage_content_image
+        = image_tag "wish/toppage_image.jpg", class: 'happiness_toppage_content_image_design'
+      .happiness_toppage_content_white
+        .happiness_toppage_content_intro
+          .happiness_toppage_content_manual_title_first
+            %span.happiness_toppage_content_manual_title_image
+              = image_tag "wish/index_capre.png"
+            %span.happiness_toppage_content_manual_title_text
+              About …
+          .happiness_toppage_content_intro_text
+            Twitterでフォローしている人の中から、もっと仲良くなりたい人をタップしてリストに入れるだけ。
+            %br
+            相手もあなたをリストに入れた場合のみ、２人にこっそりお知らせするので、断られる心配をせずにともだちを誘える画期的なサービスです。
+            %br
+            ※登録時に"きっかけ"の公式アカウントがフォローされます。
+          .happiness_toppage_content_manual_title
+            %span.happiness_toppage_content_manual_title_image
+              = image_tag "wish/index_capre.png"
+            %span.happiness_toppage_content_manual_title_text
+              For You …
+          .happiness_toppage_content_manual_text
+            もっと仲良くなりたい人がいるけど
+            %br
+            LINEするきっかけがない…
+          .happiness_toppage_content_intro_image
+            = image_tag "wish/capre_sp.jpg", class: 'happiness_toppage_content_manual_first_image_radius'
+          .happiness_toppage_content_manual_text
+            中学のとき、好きだったあの子を
+            %br
+            ごはんに誘おうかな、でも勇気がない…
+          .happiness_toppage_content_intro_image
+            = image_tag "wish/capre_album.jpg", class: 'happiness_toppage_content_manual_first_image_radius'
+          .happiness_toppage_content_manual_text
+            この前「2人で会ってみたい」
+            %br
+            と思ったあの人に…
+          .happiness_toppage_content_intro_text_final
+            相手の方も同じことを思っているかもしれません
+          .happiness_toppage_content_intro_text_final_main
+            そんなあなたに"きっかけ"を
+          .happiness_toppage_content_intro_image
+            = image_tag "wish/capre_fate.jpg", class: 'happiness_toppage_content_manual_first_image_radius'
+        .happiness_toppage_content_manual
+          .happiness_toppage_content_manual_title
+            %span.happiness_toppage_content_manual_title_image
+              = image_tag "wish/index_capre.png"
+            %span.happiness_toppage_content_manual_title_text
+              How To Use …
+          .happiness_toppage_content_manual_first
+            ①ログインすると、Twitterでフォローしている人が一覧で表示されるので、もっと仲良くなりたい人をリストへ入れてください（リストの中身が公開されることはありません）
+          .happiness_toppage_content_manual_first_image
+            = image_tag "wish/list_explanation.png", class: 'happiness_toppage_content_manual_first_image_radius'
+          .happiness_toppage_content_manual_second
+            ②相手の方もあなたのことをリストに入れた場合のみ、マッチしたことをお知らせします。これをきっかけにLINEやDMを送りましょう！
+          .happiness_toppage_content_manual_second_image
+            = image_tag "wish/match_explanation.png", class: 'happiness_toppage_content_manual_first_image_radius'
+    .happiness_toppage_login_section
+      .happiness_toppage_login_section_twitter
+        = link_to '/services/users/auth/twitter' do
+          .happiness_toppage_login_section_twitter_text
+            Twitterで登録 / ログイン
+
+    = render "footer"
+
+= javascript_include_tag "wish.js"
